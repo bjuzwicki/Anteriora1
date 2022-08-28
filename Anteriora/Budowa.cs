@@ -13,12 +13,10 @@ namespace Anteriora
     public partial class Budowa : Form
     {      
         Osada o;
-        Poczatek o2;
 
-        public Budowa(Osada c, Poczatek c2)
+        public Budowa(Osada c)
         {
             o = c;
-            o2 = c2;
             InitializeComponent();
         }
               
@@ -101,11 +99,11 @@ namespace Anteriora
         {
             if (o.pictureBoxTartak1.Visible == false)
             {
-                o.KosztBudowyOsada(o2.drewno, 50, o2.siano,0, o.tartak1);
+                o.KosztBudowyOsada(o.wood, 50, o.hay,0, o.tartak1);
             }
             else if (o.pictureBoxTartak1.Visible == true)
             {
-                o.KosztBudowyOsada(o2.drewno, 50,o2.siano,0, o.tartak2);
+                o.KosztBudowyOsada(o.wood, 50,o.hay,0, o.tartak2);
             }
         }
 
@@ -113,71 +111,71 @@ namespace Anteriora
         {
             if (o.pictureBoxKamieniolom1.Visible == false)
             {
-                o.KosztBudowyOsada(o2.drewno, 200,o2.siano,0, o.kamieniolom1);
+                o.KosztBudowyOsada(o.wood, 200,o.hay,0, o.kamieniolom1);
             }
             else if(o.pictureBoxKamieniolom1.Visible == true)
             {
-                o.KosztBudowyOsada(o2.drewno, 200,o2.siano,0, o.kamieniolom2);
+                o.KosztBudowyOsada(o.wood, 200,o.hay,0, o.kamieniolom2);
             }
         }
 
         private void buttonChatkaRolnikaBudowa_Click(object sender, EventArgs e)
         {
-            o.KosztBudowyOsada(o2.drewno, 50,o2.siano,50, o.chatkaRolnika);
+            o.KosztBudowyOsada(o.wood, 50,o.hay,50, o.chatkaRolnika);
         }
 
         private void buttonHodowlaBudowa_Click(object sender, EventArgs e)
         {
-            o.KosztBudowyOsada(o2.drewno, 100,o2.siano,100, o.hodowla);
+            o.KosztBudowyOsada(o.wood, 100,o.hay,100, o.hodowla);
         }
 
         private void buttonSadBudowa_Click(object sender, EventArgs e)
         {
-            o.KosztBudowyOsada(o2.drewno, 50, o2.siano, 50, o.chataMaga);
+            o.KosztBudowyOsada(o.wood, 50, o.hay, 50, o.chataMaga);
         }
 
         private void buttonKwateraRybacka_Click(object sender, EventArgs e)
         {
-            o.KosztBudowyOsada(o2.drewno, 50,o2.siano,50, o.kwateraRybacka);
+            o.KosztBudowyOsada(o.wood, 50,o.hay,50, o.kwateraRybacka);
         }
 
         private void buttonStudniaBudowa_Click(object sender, EventArgs e)
         {
-            o.KosztBudowyOsada(o2.drewno, 50,o2.kamień,100, o.studnia);
+            o.KosztBudowyOsada(o.wood, 50,o.stone,100, o.studnia);
         }
 
         private void buttonMagazynBudowa_Click(object sender, EventArgs e)
         {
-            o.KosztBudowyOsada(o2.drewno, 100,o2.siano,100, o2.magazyn);
+            o.KosztBudowyOsada(o.wood, 100,o.hay,100, o.magazyn);
         }
 
         private void buttonBudynekMieszkalnyBudowa_Click(object sender, EventArgs e)
         {
-            o.KosztBudowyOsada(o2.drewno, 100,o2.siano,100, o.budynekMieszkalny);
+            o.KosztBudowyOsada(o.wood, 100,o.hay,100, o.budynekMieszkalny);
         }
 
         private void buttonKuzniaBudowa_Click(object sender, EventArgs e)
         {
-            o.KosztBudowyOsada(o2.drewno, 200,o2.siano,0, o.kuznia);
+            o.KosztBudowyOsada(o.wood, 200,o.hay,0, o.kuznia);
         }
         private void buttonTargowiskoBudowa_Click(object sender, EventArgs e)
         {
-            o.KosztBudowyOsada(o2.drewno, 300,o2.kamień,150, o.targowisko);
+            o.KosztBudowyOsada(o.wood, 300,o.stone,150, o.targowisko);
         }
 
         private void buttonKoszaryBudowa_Click(object sender, EventArgs e)
         {
-            o.KosztBudowyOsada(o2.drewno, 50,o2.kamień,300, o.koszary);
+            o.KosztBudowyOsada(o.wood, 50,o.stone,300, o.koszary);
         }
 
         private void buttonMostBudowa_Click(object sender, EventArgs e)
         {
-            o.KosztBudowyOsada(o2.drewno, 100,o2.siano,0, o.most);
+            o.KosztBudowyOsada(o.wood, 100,o.hay,0, o.most);
         }
 
         private void buttonMurBudowa_Click(object sender, EventArgs e)
         {
-            o.KosztBudowyOsada(o2.drewno, 300,o2.siano,0, o.mur);
+            o.KosztBudowyOsada(o.wood, 300,o.hay,0, o.mur);
         }
         
         #endregion
@@ -185,6 +183,11 @@ namespace Anteriora
         private void buttonAnulujBudowa_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Budowa_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

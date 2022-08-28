@@ -13,7 +13,7 @@ namespace Anteriora
        
 
 
-        public Przeciwnicy(string nazwa,int atakDomyslny, int obronaDomyslna,int PZDomyslne, int odlegloscAtaku, Bitmap obrazekPrawo, Bitmap obrazekLewo, Bitmap obrazekGora, Bitmap obrazekDol)
+        public Przeciwnicy(string nazwa,int atakDomyslny, int obronaDomyslna,int PZDomyslne, int odlegloscAtaku, Bitmap obrazekPrawo, Bitmap obrazekLewo, Bitmap obrazekGora, Bitmap obrazekDol, int poziomUlepszenia = 1)
         {
             this.poziomUlepszenia = 1;
             this.nazwa = nazwa;

@@ -12,7 +12,7 @@ namespace Anteriora
 {
     public partial class PoleBitwy : Form
     {
-        Poczatek o1;
+        Osada o1;
 
         Instancje instancje;
 
@@ -51,7 +51,7 @@ namespace Anteriora
         private int numerRundyJednostki;
         private int numerRundyPrzeciwnika;
 
-        public PoleBitwy(Poczatek c1, Instancje instancja, ObszaryInstancji obszarInstancji, Bitmap obrazek)
+        public PoleBitwy(Osada c1, Instancje instancja, ObszaryInstancji obszarInstancji, Bitmap obrazek)
         {
             o1 = c1;
 

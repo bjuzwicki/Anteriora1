@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace Anteriora
 {
-    public class Mieszkancy : Budowle
+    public class Mieszkancy
     {
         public int liczbaMiejscBudynku { get; set; }
         public int liczbaMieszkancow { get; set; }

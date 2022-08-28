@@ -13,18 +13,16 @@ namespace Anteriora
     public partial class KoszaryZwiadowca : Form
     {
         Osada o1;
-        Poczatek o2;
 
-        public KoszaryZwiadowca(Osada c1, Poczatek c2)
+        public KoszaryZwiadowca(Osada c1)
         {
             o1 = c1;
-            o2 = c2;
             
             InitializeComponent();
             textBoxNotatkaZwiadowcy.Text = o1.notatkaZwiadowcy;
-            labelZwiadowcaIlosc.Text = "Ilość zwiadowców: "+ o2.zwiadowca.liczebnoscAtakujacych.ToString();
+            labelZwiadowcaIlosc.Text = "Ilość zwiadowców: "+ o1.zwiadowca.liczebnoscAtakujacych.ToString();
             labelZwiadowcaAtak.Text = "Szansa na powodzenie: 0%";
-            labelZwiadowcaPoziomUlepszenia.Text ="Poziom zwiadowców: " + o2.zwiadowca.poziomUlepszenia.ToString();
+            labelZwiadowcaPoziomUlepszenia.Text ="Poziom zwiadowców: " + o1.zwiadowca.poziomUlepszenia.ToString();
             timerZwiadowcaTekst.Start();
             //textBoxNotatkaZwiadowcy.Text = o1.InformacjaNaTematPrzeciwnika(o1.osadaGoblinow,1, o1.nietoperzDuzy, 6);
             
@@ -47,7 +45,7 @@ namespace Anteriora
         {
             this.Close();
             timerZwiadowcaTekst.Stop();
-            new Koszary(o2).Show();
+            new Koszary(o1).Show();
         }
 
         private void buttonDziennik_Click(object sender, EventArgs e)
@@ -62,15 +60,15 @@ namespace Anteriora
 
         private void buttonZwiadowca_Click(object sender, EventArgs e)
         {
-            if(o2.zwiadowca.liczebnoscAtakujacych < 1 )
+            if(o1.zwiadowca.liczebnoscAtakujacych < 1 )
             {
-                if (o2.zloto.ilosc >= 1)
+                if (o1.gold.quantity >= 1)
                 {
-                    o2.zloto.ilosc -= 1;
-                    o2.zwiadowca.liczebnoscAtakujacych++;
-                    labelZwiadowcaIlosc.Text = "Ilość zwiadowców: " + o2.zwiadowca.liczebnoscAtakujacych.ToString();
-                    labelZwiadowcaAtak.Text = "Szansa na powodzenie: " + o2.zwiadowca.ObliczAtakJednostki().ToString() + "%";
-                    MessageBox.Show(o2.zwiadowca.liczebnoscAtakujacych.ToString());
+                    o1.gold.quantity -= 1;
+                    o1.zwiadowca.liczebnoscAtakujacych++;
+                    labelZwiadowcaIlosc.Text = "Ilość zwiadowców: " + o1.zwiadowca.liczebnoscAtakujacych.ToString();
+                    labelZwiadowcaAtak.Text = "Szansa na powodzenie: " + o1.zwiadowca.ObliczAtakJednostki().ToString() + "%";
+                    MessageBox.Show(o1.zwiadowca.liczebnoscAtakujacych.ToString());
                 }
                 else
                 {
@@ -86,11 +84,11 @@ namespace Anteriora
 
         private void buttonUlepszZwiadowca_Click(object sender, EventArgs e)
         {
-            if(o2.zwiadowca.poziomUlepszenia < 3)
+            if(o1.zwiadowca.poziomUlepszenia < 3)
             {
-                o2.zwiadowca.poziomUlepszenia++;
-                labelZwiadowcaAtak.Text = "Szansa na powodzenie: " + o2.zwiadowca.ObliczAtakJednostki().ToString() + "%";
-                labelZwiadowcaPoziomUlepszenia.Text = "Poziom zwiadowców: " + o2.zwiadowca.poziomUlepszenia.ToString();
+                o1.zwiadowca.poziomUlepszenia++;
+                labelZwiadowcaAtak.Text = "Szansa na powodzenie: " + o1.zwiadowca.ObliczAtakJednostki().ToString() + "%";
+                labelZwiadowcaPoziomUlepszenia.Text = "Poziom zwiadowców: " + o1.zwiadowca.poziomUlepszenia.ToString();
             }
             else
             {

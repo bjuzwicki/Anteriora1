@@ -12,9 +12,8 @@ namespace Anteriora
 {
     public partial class Panel : Form
     {
-        Poczatek o1;
-
-        int czasGry = 1;
+        Osada o1;
+        public static int czasGry;
         public bool czyPanel2Istnieje;
         public bool czyPanel3Istnieje;
         public bool czyPanel4Istnieje;
@@ -26,9 +25,10 @@ namespace Anteriora
         bool czyRuch;
         Point start = new Point(0, 0);
 
-        public Panel(Poczatek c1)
+        public Panel(Osada c1, int czasGry = 1)
         {
             o1 = c1;
+            Panel.czasGry = czasGry;
             InitializeComponent();
                        
             timerPanel.Start();
@@ -38,41 +38,40 @@ namespace Anteriora
         {
             czasGry++;
             labelCzasGry.Text = czasGry.ToString();            
-            labelDrewno.Text = o1.drewno.ilosc.ToString();
-            labelKamien.Text = o1.kamień.ilosc.ToString();
-            labelSiano.Text = o1.siano.ilosc.ToString();           
-            labelJedzenie.Text = o1.jedzenie.ilosc.ToString();
-            labelWoda.Text = o1.woda.ilosc.ToString();
-            labelZloto.Text = o1.zloto.ilosc.ToString();
+            labelDrewno.Text = o1.wood.quantity.ToString();
+            labelKamien.Text = o1.stone.quantity.ToString();
+            labelSiano.Text = o1.hay.quantity.ToString();           
+            labelJedzenie.Text = o1.food.quantity.ToString();
+            labelWoda.Text = o1.water.quantity.ToString();
+            labelZloto.Text = o1.gold.quantity.ToString();
 
-            ZmianaKoloruTekstuLabela(o1.drewno, labelDrewno);
-            ZmianaKoloruTekstuLabela(o1.kamień, labelKamien);
-            ZmianaKoloruTekstuLabela(o1.siano, labelSiano);
-            ZmianaKoloruTekstuLabela(o1.jedzenie, labelJedzenie);
-            ZmianaKoloruTekstuLabela(o1.woda, labelWoda);
+            ZmianaKoloruTekstuLabela(o1.wood, labelDrewno);
+            ZmianaKoloruTekstuLabela(o1.stone, labelKamien);
+            ZmianaKoloruTekstuLabela(o1.hay, labelSiano);
+            ZmianaKoloruTekstuLabela(o1.food, labelJedzenie);
+            ZmianaKoloruTekstuLabela(o1.water, labelWoda);
            
             ZmienKolorLabelaPrzyGlodzie();
-
         }
 
         #region Zmiana koloru labela jedzenia i wody podczas głodu
 
         public void ZmienKolorLabelaPrzyGlodzie()
         {
-            if (o1.jedzenie.ilosc < 0)
+            if (o1.food.quantity < 0)
             {
                 labelJedzenie.ForeColor = Color.DarkRed;
             }
-            else if (labelJedzenie.ForeColor == Color.DarkRed && o1.jedzenie.ilosc >= 0)
+            else if (labelJedzenie.ForeColor == Color.DarkRed && o1.food.quantity >= 0)
             {
                 labelJedzenie.ForeColor = Color.Black;
             }
 
-            if (o1.woda.ilosc < 0)
+            if (o1.water.quantity < 0)
             {
                 labelWoda.ForeColor = Color.DarkRed;
             }
-            else if (labelWoda.ForeColor == Color.DarkRed && o1.woda.ilosc >= 0)
+            else if (labelWoda.ForeColor == Color.DarkRed && o1.water.quantity >= 0)
             {
                 labelWoda.ForeColor = Color.Black;
             }
@@ -86,44 +85,44 @@ namespace Anteriora
         {
             if (o1.magazyn.poziomUlepszenia == 0)
             {
-                if (material.ilosc >= 99)
+                if (material.quantity >= 99)
                 {
                     label.ForeColor = Color.DarkGreen;
                 }
-                else if (material.ilosc < 99)
+                else if (material.quantity < 99)
                 {
                     label.ForeColor = Color.Black;
                 }
             }
             else if (o1.magazyn.poziomUlepszenia == 1)
             {
-                if (material.ilosc >= 999)
+                if (material.quantity >= 999)
                 {
                     label.ForeColor = Color.DarkGreen;
                 }
-                else if (material.ilosc < 999)
+                else if (material.quantity < 999)
                 {
                     label.ForeColor = Color.Black;
                 }
             }
             else if (o1.magazyn.poziomUlepszenia == 2)
             {
-                if (material.ilosc >= 1999)
+                if (material.quantity >= 1999)
                 {
                     label.ForeColor = Color.DarkGreen;
                 }
-                else if (material.ilosc < 1999)
+                else if (material.quantity < 1999)
                 {
                     label.ForeColor = Color.Black;
                 }
             }
             else if (o1.magazyn.poziomUlepszenia == 3)
             {
-                if (material.ilosc >= 2999)
+                if (material.quantity >= 2999)
                 {
                     label.ForeColor = Color.DarkGreen;
                 }
-                else if (material.ilosc < 2999)
+                else if (material.quantity < 2999)
                 {
                     label.ForeColor = Color.Black;
                 }

@@ -9,76 +9,124 @@ using System.Windows.Forms;
 
 namespace Anteriora
 {
-
     public partial class Osada : Form
     {
         public Poczatek o;
 
         //budynki w osadzie
 
-        public Budowle tartak1 = new Budowle("pierwszy tartak", 1);
-        public Budowle tartak2 = new Budowle("drugi tartak", 1);
-        public Budowle kamieniolom1 = new Budowle("pierwszy kamieniołom", 2);
-        public Budowle kamieniolom2 = new Budowle("drugi kamieniołom", 2);
-        public Budowle kwateraRybacka = new Budowle("kwatera rybacka", 2);
-        public Budowle chataMaga = new Budowle("chata maga", 1);
-        public Budowle chatkaRolnika = new Budowle("chatka rolnika", 3);
-        public Budowle hodowla = new Budowle("hodowla", 4);
-        public Budowle studnia = new Budowle("studnia", 2);
+        public Budowle tartak1;
+        public Budowle tartak2;
+        public Budowle kamieniolom1;
+        public Budowle kamieniolom2;
+        public Budowle kwateraRybacka;
+        public Budowle chataMaga;
+        public Budowle chatkaRolnika;
+        public Budowle hodowla;
+        public Budowle studnia;
         
-        public Budowle targowisko = new Budowle("targowisko",1);
-        public Budowle most = new Budowle("most", 4);
-        public Budowle mur = new Budowle("mur", 10);
-        public Budowle koszary = new Budowle("koszary", 6);
-        public Budowle budynekMieszkalny = new Budowle("budynek mieszkalny", 4);
-        public Budowle kuznia = new Budowle("kuznia", 2);
+        public Budowle targowisko;
+        public Budowle most;
+        public Budowle mur;
+        public Budowle koszary;
+        public Budowle budynekMieszkalny;
+        public Budowle kuznia;
 
         //budynki w lodowej krainie
 
-        public Budowle warsztatLK = new Budowle("lodowy warsztat",1);
-        public Budowle kwateraRybackaLK1 = new Budowle("pierwsza lodowa kwatera rybacka",1);
-        public Budowle kwateraRybackaLK2 = new Budowle("druga lodowa kwatera rybacka",1);
-        public Budowle studniaLK1 = new Budowle("pierwsza lodowa studnia",1);
-        public Budowle studniaLK2 = new Budowle("druga lodowa studnia",1);
-        public Budowle budynekMieszkalnyLK = new Budowle("lodowy budynek mieszkalny",1);
+        public Budowle warsztatLK;
+        public Budowle kwateraRybackaLK1;
+        public Budowle kwateraRybackaLK2;
+        public Budowle studniaLK1;
+        public Budowle studniaLK2;
+        public Budowle budynekMieszkalnyLK;
 
         //budynki w osadzie goblinów
 
-        public Budowle kopalniaKamienia = new Budowle("kopalnia kamienia", 2);
-        public Budowle kopalniaRudyZelaza1 = new Budowle("pierwsza kopalnia rudy zelaza", 2);
-        public Budowle kopalniaRudyZelaza2 = new Budowle("druga kopalnia rudy zelaza", 2);
+        public Budowle kopalniaKamienia;
+        public Budowle kopalniaRudyZelaza1;
+        public Budowle kopalniaRudyZelaza2;
 
         public List<Budowle> budynki = new List<Budowle>();
         public List<Materialy> surowce = new List<Materialy>();
-        
-        public Przeciwnicy goblin = new Przeciwnicy("Goblin", 10, 5, 20, 100, Properties.Resources.goblinprawo, Properties.Resources.goblinlewo, Properties.Resources.goblingora, Properties.Resources.goblindol);
-        public Przeciwnicy goblin2 = new Przeciwnicy("Goblin", 10, 5, 20, 100, Properties.Resources.goblinprawo, Properties.Resources.goblinlewo, Properties.Resources.goblingora, Properties.Resources.goblindol);
-        public Przeciwnicy goblin3 = new Przeciwnicy("Goblin", 10, 5, 20, 100, Properties.Resources.goblinprawo, Properties.Resources.goblinlewo, Properties.Resources.goblingora, Properties.Resources.goblindol);
-        public Przeciwnicy goblin4 = new Przeciwnicy("Goblin", 10, 5, 20, 100, Properties.Resources.goblinprawo, Properties.Resources.goblinlewo, Properties.Resources.goblingora, Properties.Resources.goblindol);
-        public Przeciwnicy goblin5 = new Przeciwnicy("Goblin", 10, 5, 20, 100, Properties.Resources.goblinprawo, Properties.Resources.goblinlewo, Properties.Resources.goblingora, Properties.Resources.goblindol);
-        public Przeciwnicy goblin6 = new Przeciwnicy("Goblin", 10, 5, 20, 100, Properties.Resources.goblinprawo, Properties.Resources.goblinlewo, Properties.Resources.goblingora, Properties.Resources.goblindol);
-        public Przeciwnicy goblin7 = new Przeciwnicy("Goblin", 10, 5, 20, 100, Properties.Resources.goblinprawo, Properties.Resources.goblinlewo, Properties.Resources.goblingora, Properties.Resources.goblindol);
-        public Przeciwnicy ork = new Przeciwnicy("Ork", 400, 50, 400, 100, Properties.Resources.orkprawo, Properties.Resources.orklewo, Properties.Resources.orkgora, Properties.Resources.orkdol);
-        public Przeciwnicy nietoperzDuzy = new Przeciwnicy("Duży nietoperz", 10, 5, 20, 100, Properties.Resources.nietoperzduzyprawo, Properties.Resources.nietoperzduzylewo, Properties.Resources.nietoperzduzygora, Properties.Resources.nietoperzduzydol);
-        public Przeciwnicy nietoperzMaly = new Przeciwnicy("Mały nietoperz", 5, 1, 5, 100, Properties.Resources.nietoperzmalyprawo, Properties.Resources.nietoperzmalylewo, Properties.Resources.nietoperzmalygora, Properties.Resources.nietoperzmalydol);
-        public Przeciwnicy robak = new Przeciwnicy("Robak", 30, 10, 50, 100, Properties.Resources.robakprawo, Properties.Resources.robaklewo, Properties.Resources.robakgora, Properties.Resources.robakdol);
-        public Przeciwnicy wazOgnisty = new Przeciwnicy("Ognisty wąż", 10, 10, 100, 100, Properties.Resources.waz3lewo, Properties.Resources.waz3lewo, Properties.Resources.waz3lewo, Properties.Resources.waz3lewo);
-        public Przeciwnicy wazJadowity = new Przeciwnicy("Jadowity wąż", 10, 10, 100, 100, Properties.Resources.waz1lewo, Properties.Resources.waz1lewo, Properties.Resources.waz1lewo, Properties.Resources.waz1lewo);
-        public Przeciwnicy brak = new Przeciwnicy();
 
-        public ObszaryInstancji osadaGoblinow1 = new ObszaryInstancji();
-        public ObszaryInstancji osadaGoblinow2 = new ObszaryInstancji();
-        public ObszaryInstancji osadaGoblinow3 = new ObszaryInstancji();
-        public ObszaryInstancji osadaGoblinow4 = new ObszaryInstancji();
-        public ObszaryInstancji osadaGoblinow5 = new ObszaryInstancji();
-        public ObszaryInstancji osadaGoblinow6 = new ObszaryInstancji();
-        public ObszaryInstancji osadaGoblinow7 = new ObszaryInstancji();
-        public ObszaryInstancji osadaGoblinow8 = new ObszaryInstancji();
+        public Przeciwnicy goblin;
+        public Przeciwnicy goblin2;
+        public Przeciwnicy goblin3;
+        public Przeciwnicy goblin4;
+        public Przeciwnicy goblin5;
+        public Przeciwnicy goblin6;
+        public Przeciwnicy goblin7;
+        public Przeciwnicy ork;
+        public Przeciwnicy nietoperzDuzy;
+        public Przeciwnicy nietoperzMaly;
+        public Przeciwnicy robak;
+        public Przeciwnicy wazOgnisty;
+        public Przeciwnicy wazJadowity;
+        public Przeciwnicy brak;
 
-        public Instancje osadaGoblinow = new Instancje("Osada Goblinów", 120, 5, "orklewo", "orkgora", "orkdol");
-        public Instancje jaskiniaWezy = new Instancje("Jaskinia Węży", 180, 10, "waz2lewo", "waz2lewo", "waz2lewo");
-        public Instancje lodowaKraina = new Instancje("Lodowa kraina", 180, 10, "orklewo", "orkgora", "orkdol");
+        public ObszaryInstancji osadaGoblinow1;
+        public ObszaryInstancji osadaGoblinow2;
+        public ObszaryInstancji osadaGoblinow3;
+        public ObszaryInstancji osadaGoblinow4;
+        public ObszaryInstancji osadaGoblinow5;
+        public ObszaryInstancji osadaGoblinow6;
+        public ObszaryInstancji osadaGoblinow7;
+        public ObszaryInstancji osadaGoblinow8;
+
+        public Instancje osadaGoblinow;
+        public Instancje jaskiniaWezy;
+        public Instancje lodowaKraina;
         //public Instancje zagadka = new Instancje();
+
+        public Mieszkancy mieszkancy = new Mieszkancy();
+
+        public Materialy wood;
+        public Materialy hay;
+        public Materialy stone;
+        public Materialy food;
+        public Materialy water;
+        public Materialy skin;
+        public Materialy gold;
+        public Materialy ironOre;
+        public Materialy obsidianOre;
+        public Materialy wool;
+        public Materialy iron;
+        public Materialy obsidian;
+        public Materialy leatherBelt;
+        public Materialy pieceOfWood;
+
+        public Uzbrojenie skorzanaZbroja;
+        public Uzbrojenie skorzaneSpodnie;
+        public Uzbrojenie skorzanyHelm;
+        public Uzbrojenie skorzaneButy;
+        public Uzbrojenie zelaznaZbroja;
+        public Uzbrojenie zelazneSpodnie;
+        public Uzbrojenie zelaznyHelm;
+        public Uzbrojenie zelazneButy;
+        public Uzbrojenie obsydianowaZbroja;
+        public Uzbrojenie obsydianoweSpodnie;
+        public Uzbrojenie obsydianowyHelm;
+        public Uzbrojenie obsydianoweButy;
+        public Uzbrojenie zelaznaTarcza;
+        public Uzbrojenie obsydianowaTarcza;
+
+        public Bronie kamiennyMiecz;                // kawalekDrewna 0, skora 1, kamien 2, drewno 3, zelazo 4, obsydian 5
+        public Bronie zelaznyMiecz;                   // rudaZelaza 6, rudaObsydianu 7, welna 8, skorzanyPasek 9
+        public Bronie obsydianowyMiecz;
+        public Bronie luk;
+
+        public Inne ubraniaMieszkancow;
+        public Inne lozko;
+
+        public JednostkiGracza zwiadowca;
+        public JednostkiGracza piechur;
+        public JednostkiGracza lucznik;
+        public JednostkiGracza rycerz;
+        public JednostkiGracza czarnyRycerz;
+        public JednostkiGracza czarnyLucznik;
+
+        public Budowle magazyn;
 
         public int i, j; // zmienne związane ze sprawdzaniem przepełnienia magazynu
         public int czasBudowy;
@@ -97,10 +145,118 @@ namespace Anteriora
             o = c;
             InitializeComponent();
 
-            pictureBoxGraczPart5.BackgroundImage = PostacGracza.obrazekGora;
+            pictureBoxGraczPart5.BackgroundImage = Character.pictureUp;
 
-            budynki.AddRange(new Budowle[] { tartak1, tartak2, kamieniolom1, kamieniolom2, kwateraRybacka, chataMaga, chatkaRolnika, hodowla, studnia, o.magazyn, targowisko, most, mur, koszary, budynekMieszkalny, kuznia });
-            surowce.AddRange(new Materialy[] { o.drewno, o.kamień, o.siano, o.skora, o.welna, o.jedzenie, o.woda, o.rudaZelaza, o.rudaObsydianu, o.zelazo, o.obsydian, o.skorzanyPasek, o.kawalekDrewna });
+            mieszkancy = new Mieszkancy();
+
+            wood = new Materialy(2000 + o.woodQuantity);
+            hay = new Materialy(2000 + o.hayQuantity);
+            stone = new Materialy(2000 + o.stoneQuantiy);
+            food = new Materialy(2000 + o.foodQuantity);
+            water = new Materialy(2000);
+            skin = new Materialy(0);
+            gold = new Materialy(100);
+            ironOre = new Materialy(100);
+            obsidianOre = new Materialy(100);
+            wool = new Materialy(24);
+            iron = new Materialy(24);
+            obsidian = new Materialy(24);
+            leatherBelt = new Materialy(24);
+            pieceOfWood = new Materialy(24);
+
+            tartak1 = new Budowle("pierwszy tartak", 1);
+            tartak2 = new Budowle("drugi tartak", 1);
+            kamieniolom1 = new Budowle("pierwszy kamieniołom", 2);
+            kamieniolom2 = new Budowle("drugi kamieniołom", 2);
+            kwateraRybacka = new Budowle("kwatera rybacka", 2);
+            chataMaga = new Budowle("chata maga", 1);
+            chatkaRolnika = new Budowle("chatka rolnika", 3);
+            hodowla = new Budowle("hodowla", 4);
+            studnia = new Budowle("studnia", 2);
+            targowisko = new Budowle("targowisko", 1);
+            most = new Budowle("most", 4);
+            mur = new Budowle("mur", 10);
+            koszary = new Budowle("koszary", 6);
+            budynekMieszkalny = new Budowle("budynek mieszkalny", 4);
+            kuznia = new Budowle("kuznia", 2);
+            magazyn = new Budowle("magazyn", 1);
+
+            //budynki w lodowej krainie
+
+            warsztatLK = new Budowle("lodowy warsztat", 1);
+            kwateraRybackaLK1 = new Budowle("pierwsza lodowa kwatera rybacka", 1);
+            kwateraRybackaLK2 = new Budowle("druga lodowa kwatera rybacka", 1);
+            studniaLK1 = new Budowle("pierwsza lodowa studnia", 1);
+            studniaLK2 = new Budowle("druga lodowa studnia", 1);
+            budynekMieszkalnyLK = new Budowle("lodowy budynek mieszkalny", 1);
+
+            //budynki w osadzie goblinów
+
+            kopalniaKamienia = new Budowle("kopalnia kamienia", 2);
+            kopalniaRudyZelaza1 = new Budowle("pierwsza kopalnia rudy zelaza", 2);
+            kopalniaRudyZelaza2 = new Budowle("druga kopalnia rudy zelaza", 2);
+
+            goblin = new Przeciwnicy("Goblin", 10, 5, 20, 100, Properties.Resources.goblinprawo, Properties.Resources.goblinlewo, Properties.Resources.goblingora, Properties.Resources.goblindol);
+            goblin2 = new Przeciwnicy("Goblin", 10, 5, 20, 100, Properties.Resources.goblinprawo, Properties.Resources.goblinlewo, Properties.Resources.goblingora, Properties.Resources.goblindol);
+            goblin3 = new Przeciwnicy("Goblin", 10, 5, 20, 100, Properties.Resources.goblinprawo, Properties.Resources.goblinlewo, Properties.Resources.goblingora, Properties.Resources.goblindol);
+            goblin4 = new Przeciwnicy("Goblin", 10, 5, 20, 100, Properties.Resources.goblinprawo, Properties.Resources.goblinlewo, Properties.Resources.goblingora, Properties.Resources.goblindol);
+            goblin5 = new Przeciwnicy("Goblin", 10, 5, 20, 100, Properties.Resources.goblinprawo, Properties.Resources.goblinlewo, Properties.Resources.goblingora, Properties.Resources.goblindol);
+            goblin6 = new Przeciwnicy("Goblin", 10, 5, 20, 100, Properties.Resources.goblinprawo, Properties.Resources.goblinlewo, Properties.Resources.goblingora, Properties.Resources.goblindol);
+            goblin7 = new Przeciwnicy("Goblin", 10, 5, 20, 100, Properties.Resources.goblinprawo, Properties.Resources.goblinlewo, Properties.Resources.goblingora, Properties.Resources.goblindol);
+            ork = new Przeciwnicy("Ork", 400, 50, 400, 100, Properties.Resources.orkprawo, Properties.Resources.orklewo, Properties.Resources.orkgora, Properties.Resources.orkdol);
+            nietoperzDuzy = new Przeciwnicy("Duży nietoperz", 10, 5, 20, 100, Properties.Resources.nietoperzduzyprawo, Properties.Resources.nietoperzduzylewo, Properties.Resources.nietoperzduzygora, Properties.Resources.nietoperzduzydol);
+            nietoperzMaly = new Przeciwnicy("Mały nietoperz", 5, 1, 5, 100, Properties.Resources.nietoperzmalyprawo, Properties.Resources.nietoperzmalylewo, Properties.Resources.nietoperzmalygora, Properties.Resources.nietoperzmalydol);
+            robak = new Przeciwnicy("Robak", 30, 10, 50, 100, Properties.Resources.robakprawo, Properties.Resources.robaklewo, Properties.Resources.robakgora, Properties.Resources.robakdol);
+            wazOgnisty = new Przeciwnicy("Ognisty wąż", 10, 10, 100, 100, Properties.Resources.waz3lewo, Properties.Resources.waz3lewo, Properties.Resources.waz3lewo, Properties.Resources.waz3lewo);
+            wazJadowity = new Przeciwnicy("Jadowity wąż", 10, 10, 100, 100, Properties.Resources.waz1lewo, Properties.Resources.waz1lewo, Properties.Resources.waz1lewo, Properties.Resources.waz1lewo);
+            brak = new Przeciwnicy();
+
+            osadaGoblinow1 = new ObszaryInstancji();
+            osadaGoblinow2 = new ObszaryInstancji();
+            osadaGoblinow3 = new ObszaryInstancji();
+            osadaGoblinow4 = new ObszaryInstancji();
+            osadaGoblinow5 = new ObszaryInstancji();
+            osadaGoblinow6 = new ObszaryInstancji();
+            osadaGoblinow7 = new ObszaryInstancji();
+            osadaGoblinow8 = new ObszaryInstancji();
+
+            osadaGoblinow = new Instancje("Osada Goblinów", 120, 5, "orklewo", "orkgora", "orkdol");
+            jaskiniaWezy = new Instancje("Jaskinia Węży", 180, 10, "waz2lewo", "waz2lewo", "waz2lewo");
+            lodowaKraina = new Instancje("Lodowa kraina", 180, 10, "orklewo", "orkgora", "orkdol");
+            //public Instancje zagadka = new Instancje();
+
+            skorzanaZbroja = new Uzbrojenie("Skórzana Zbroja", 8, 0, 0, "1X1111111", Properties.Resources.skorzana_zbroja);
+            skorzaneSpodnie = new Uzbrojenie("Skórzane Spodnie", 7, 0, 0, "1111X11X1", Properties.Resources.skorzane_spodnie);
+            skorzanyHelm = new Uzbrojenie("Skórzany Hełm", 5, 0, 0, "1111X1XXX", "XXX1111X1", Properties.Resources.skorzany_helm);
+            skorzaneButy = new Uzbrojenie("Skórzane Buty", 4, 0, 0, "XXX1X11X1", "1X11X1XXX", Properties.Resources.skorzane_buty);
+            zelaznaZbroja = new Uzbrojenie("Żelazna Zbroja", 0, 8, 0, "4X4444444", Properties.Resources.zelazna_zbroja);
+            zelazneSpodnie = new Uzbrojenie("Żelazne Spodnie", 0, 7, 0, "4444X44X4", Properties.Resources.zelazne_spodnie);
+            zelaznyHelm = new Uzbrojenie("Żelazny Hełm", 0, 5, 0, "4444X4XXX", "XXX4444X4", Properties.Resources.zelazny_helm);
+            zelazneButy = new Uzbrojenie("Żelazne Buty", 0, 4, 0, "XXX4X44X4", "4X44X4XXX", Properties.Resources.zelazne_buty);
+            obsydianowaZbroja = new Uzbrojenie("Obsydianowa Zbroja", 0, 0, 8, "5X5555555", Properties.Resources.obsydianowa_zbroja);
+            obsydianoweSpodnie = new Uzbrojenie("Obsydianowe Spodnie", 0, 0, 7, "5555X55X5", Properties.Resources.obsydianowe_spodnie);
+            obsydianowyHelm = new Uzbrojenie("Obsydianowy Helm", 0, 0, 5, "5555X5XXX", "XXX5555X5", Properties.Resources.obsydianowy_helm);
+            obsydianoweButy = new Uzbrojenie("Obsydianowe Buty", 0, 0, 4, "XXX5X55X5", "5X55X5XXX", Properties.Resources.obsydianowe_buty);
+            zelaznaTarcza = new Uzbrojenie("Żelazna tarcza", "434343434", Properties.Resources.zelazna_tarcza);
+            obsydianowaTarcza = new Uzbrojenie("Obsydianowa tarcza", "535353535", Properties.Resources.obsydianowa_tarcza);
+
+            kamiennyMiecz = new Bronie("Kamienny Miecz", 1, 2, 0, 0, "2XX2XX0XX", "X2XX2XX0X", "XX2XX2XX0", Properties.Resources.kamienny_miecz);                // kawalekDrewna 0, skora 1, kamien 2, drewno 3, zelazo 4, obsydian 5
+            zelaznyMiecz = new Bronie("Żelazny Miecz", 1, 0, 2, 0, "4XX4XX0XX", "X4XX4XX0X", "XX4XX4XX0", Properties.Resources.zelazny_miecz);                   // rudaZelaza 6, rudaObsydianu 7, welna 8, skorzanyPasek 9
+            obsydianowyMiecz = new Bronie("Obsydianowy Miecz", 1, 0, 0, 2, "5XX5XX0XX", "X5XX5XX0X", "XX5XX5XX0", Properties.Resources.obsydianowy_miecz);
+            luk = new Bronie("Łuk", 3, 3, "09X0X909X", "X909X0X90", Properties.Resources.luk);
+
+            ubraniaMieszkancow = new Inne("Ubrania mieszkańców", "888888888", Properties.Resources.ubrania_mieszkanców, 9);
+            lozko = new Inne("Łóżko", "888999333", Properties.Resources.łóżko, 3);
+
+            zwiadowca = new JednostkiGracza();
+            piechur = new JednostkiGracza("Piechur", 10, 10, 100, 1, 100, true, Properties.Resources.wojownikprawo, Properties.Resources.wojowniklewo, Properties.Resources.wojownikgora, Properties.Resources.wojownikdol);
+            lucznik = new JednostkiGracza("Łucznik", 20, 5, 50, 1, 300, false, Properties.Resources.lucznikprawo, Properties.Resources.luczniklewo, Properties.Resources.lucznikgora, Properties.Resources.lucznikdol);
+            rycerz = new JednostkiGracza("Rycerz", 40, 20, 200, 1, 100, true, Properties.Resources.rycerzprawo, Properties.Resources.rycerzlewo, Properties.Resources.rycerzgora, Properties.Resources.rycerzdol);
+            czarnyRycerz = new JednostkiGracza("Czarny rycerz", 10, 10, 100, 1, 100, true, Properties.Resources.czarnyrycerzprawo, Properties.Resources.czarnyrycerzlewo, Properties.Resources.czarnyrycerzgora, Properties.Resources.czarnyrycerzdol);
+            czarnyLucznik = new JednostkiGracza("Czarny łucznik", 20, 5, 50, 1, 300, false, Properties.Resources.czarnylucznikprawo, Properties.Resources.czarnyluczniklewo, Properties.Resources.czarnylucznikgora, Properties.Resources.czarnylucznikdol);
+
+            budynki.AddRange(new Budowle[] { tartak1, tartak2, kamieniolom1, kamieniolom2, kwateraRybacka, chataMaga, chatkaRolnika, hodowla, studnia, magazyn, targowisko, most, mur, koszary, budynekMieszkalny, kuznia });
+            surowce.AddRange(new Materialy[] { wood, stone, hay, skin, wool, food, water, ironOre, obsidianOre, iron, obsidian, leatherBelt, pieceOfWood });
 
             timerCzasGry.Start();
             //zagadka.obrazekLewo = "dinozaurmacius";
@@ -124,7 +280,7 @@ namespace Anteriora
             hodowla.pictureBox = pictureBoxHodowla;
             chataMaga.pictureBox = pictureBoxChataMaga;
             kuznia.pictureBox = pictureBoxKuznia;
-            o.magazyn.pictureBox = pictureBoxMagazyn;
+            magazyn.pictureBox = pictureBoxMagazyn;
             mur.pictureBox = pictureBoxMur;
 
             #endregion
@@ -134,23 +290,180 @@ namespace Anteriora
             Budowle.PrzypiszPozycjeBudowli(budynki);
 
             #endregion
+        }
 
+        public Osada()
+        {
+            SQLConnection sql = new SQLConnection();
+            InitializeComponent();
 
+            pictureBoxMiejsceNaNamiot.Visible = false;
+            pictureBoxNamiot.Visible = true;
+            pictureBoxGraczPart6.Visible = false;
+            pictureBoxGraczPart5.Visible = false;
+
+            mieszkancy = new Mieszkancy();
+
+            DataTable loadData = sql.LoadGame(Character.REF);
+
+            new Panel(this,(int)loadData.Rows[0][2]).Show();
+
+            wood = new Materialy((int)loadData.Rows[0][3],(int)loadData.Rows[0][4]);
+            hay = new Materialy((int)loadData.Rows[0][5], (int)loadData.Rows[0][6]);
+            stone = new Materialy((int)loadData.Rows[0][7], (int)loadData.Rows[0][8]);
+            food = new Materialy((int)loadData.Rows[0][9], (int)loadData.Rows[0][10]);
+            water = new Materialy((int)loadData.Rows[0][11], (int)loadData.Rows[0][12]);
+            skin = new Materialy((int)loadData.Rows[0][13], (int)loadData.Rows[0][14]);
+            gold = new Materialy((int)loadData.Rows[0][15], (int)loadData.Rows[0][16]);
+            ironOre = new Materialy((int)loadData.Rows[0][17], (int)loadData.Rows[0][18]);
+            obsidianOre = new Materialy((int)loadData.Rows[0][19], (int)loadData.Rows[0][20]);
+            wool = new Materialy((int)loadData.Rows[0][21], (int)loadData.Rows[0][22]);
+            iron = new Materialy((int)loadData.Rows[0][23], (int)loadData.Rows[0][24]);
+            obsidian = new Materialy((int)loadData.Rows[0][25], (int)loadData.Rows[0][26]);
+            leatherBelt = new Materialy((int)loadData.Rows[0][27], (int)loadData.Rows[0][28]);
+            pieceOfWood = new Materialy((int)loadData.Rows[0][29], (int)loadData.Rows[0][30]);
+
+            tartak1 = new Budowle("pierwszy tartak", 1);
+            tartak2 = new Budowle("drugi tartak", 1);
+            kamieniolom1 = new Budowle("pierwszy kamieniołom", 2);
+            kamieniolom2 = new Budowle("drugi kamieniołom", 2);
+            kwateraRybacka = new Budowle("kwatera rybacka", 2);
+            chataMaga = new Budowle("chata maga", 1);
+            chatkaRolnika = new Budowle("chatka rolnika", 3);
+            hodowla = new Budowle("hodowla", 4);
+            studnia = new Budowle("studnia", 2);
+            targowisko = new Budowle("targowisko", 1);
+            most = new Budowle("most", 4);
+            mur = new Budowle("mur", 10);
+            koszary = new Budowle("koszary", 6);
+            budynekMieszkalny = new Budowle("budynek mieszkalny", 4);
+            kuznia = new Budowle("kuznia", 2);
+            magazyn = new Budowle("magazyn", 1);
+
+            //budynki w lodowej krainie
+
+            warsztatLK = new Budowle("lodowy warsztat", 1);
+            kwateraRybackaLK1 = new Budowle("pierwsza lodowa kwatera rybacka", 1);
+            kwateraRybackaLK2 = new Budowle("druga lodowa kwatera rybacka", 1);
+            studniaLK1 = new Budowle("pierwsza lodowa studnia", 1);
+            studniaLK2 = new Budowle("druga lodowa studnia", 1);
+            budynekMieszkalnyLK = new Budowle("lodowy budynek mieszkalny", 1);
+
+            //budynki w osadzie goblinów
+
+            kopalniaKamienia = new Budowle("kopalnia kamienia", 2);
+            kopalniaRudyZelaza1 = new Budowle("pierwsza kopalnia rudy zelaza", 2);
+            kopalniaRudyZelaza2 = new Budowle("druga kopalnia rudy zelaza", 2);
+
+            goblin = new Przeciwnicy("Goblin", 10, 5, 20, 100, Properties.Resources.goblinprawo, Properties.Resources.goblinlewo, Properties.Resources.goblingora, Properties.Resources.goblindol);
+            goblin2 = new Przeciwnicy("Goblin", 10, 5, 20, 100, Properties.Resources.goblinprawo, Properties.Resources.goblinlewo, Properties.Resources.goblingora, Properties.Resources.goblindol);
+            goblin3 = new Przeciwnicy("Goblin", 10, 5, 20, 100, Properties.Resources.goblinprawo, Properties.Resources.goblinlewo, Properties.Resources.goblingora, Properties.Resources.goblindol);
+            goblin4 = new Przeciwnicy("Goblin", 10, 5, 20, 100, Properties.Resources.goblinprawo, Properties.Resources.goblinlewo, Properties.Resources.goblingora, Properties.Resources.goblindol);
+            goblin5 = new Przeciwnicy("Goblin", 10, 5, 20, 100, Properties.Resources.goblinprawo, Properties.Resources.goblinlewo, Properties.Resources.goblingora, Properties.Resources.goblindol);
+            goblin6 = new Przeciwnicy("Goblin", 10, 5, 20, 100, Properties.Resources.goblinprawo, Properties.Resources.goblinlewo, Properties.Resources.goblingora, Properties.Resources.goblindol);
+            goblin7 = new Przeciwnicy("Goblin", 10, 5, 20, 100, Properties.Resources.goblinprawo, Properties.Resources.goblinlewo, Properties.Resources.goblingora, Properties.Resources.goblindol);
+            ork = new Przeciwnicy("Ork", 400, 50, 400, 100, Properties.Resources.orkprawo, Properties.Resources.orklewo, Properties.Resources.orkgora, Properties.Resources.orkdol);
+            nietoperzDuzy = new Przeciwnicy("Duży nietoperz", 10, 5, 20, 100, Properties.Resources.nietoperzduzyprawo, Properties.Resources.nietoperzduzylewo, Properties.Resources.nietoperzduzygora, Properties.Resources.nietoperzduzydol);
+            nietoperzMaly = new Przeciwnicy("Mały nietoperz", 5, 1, 5, 100, Properties.Resources.nietoperzmalyprawo, Properties.Resources.nietoperzmalylewo, Properties.Resources.nietoperzmalygora, Properties.Resources.nietoperzmalydol);
+            robak = new Przeciwnicy("Robak", 30, 10, 50, 100, Properties.Resources.robakprawo, Properties.Resources.robaklewo, Properties.Resources.robakgora, Properties.Resources.robakdol);
+            wazOgnisty = new Przeciwnicy("Ognisty wąż", 10, 10, 100, 100, Properties.Resources.waz3lewo, Properties.Resources.waz3lewo, Properties.Resources.waz3lewo, Properties.Resources.waz3lewo);
+            wazJadowity = new Przeciwnicy("Jadowity wąż", 10, 10, 100, 100, Properties.Resources.waz1lewo, Properties.Resources.waz1lewo, Properties.Resources.waz1lewo, Properties.Resources.waz1lewo);
+            brak = new Przeciwnicy();
+
+            osadaGoblinow1 = new ObszaryInstancji();
+            osadaGoblinow2 = new ObszaryInstancji();
+            osadaGoblinow3 = new ObszaryInstancji();
+            osadaGoblinow4 = new ObszaryInstancji();
+            osadaGoblinow5 = new ObszaryInstancji();
+            osadaGoblinow6 = new ObszaryInstancji();
+            osadaGoblinow7 = new ObszaryInstancji();
+            osadaGoblinow8 = new ObszaryInstancji();
+
+            osadaGoblinow = new Instancje("Osada Goblinów", 120, 5, "orklewo", "orkgora", "orkdol");
+            jaskiniaWezy = new Instancje("Jaskinia Węży", 180, 10, "waz2lewo", "waz2lewo", "waz2lewo");
+            lodowaKraina = new Instancje("Lodowa kraina", 180, 10, "orklewo", "orkgora", "orkdol");
+            //public Instancje zagadka = new Instancje();
+
+            skorzanaZbroja = new Uzbrojenie("Skórzana Zbroja", 8, 0, 0, "1X1111111", Properties.Resources.skorzana_zbroja);
+            skorzaneSpodnie = new Uzbrojenie("Skórzane Spodnie", 7, 0, 0, "1111X11X1", Properties.Resources.skorzane_spodnie);
+            skorzanyHelm = new Uzbrojenie("Skórzany Hełm", 5, 0, 0, "1111X1XXX", "XXX1111X1", Properties.Resources.skorzany_helm);
+            skorzaneButy = new Uzbrojenie("Skórzane Buty", 4, 0, 0, "XXX1X11X1", "1X11X1XXX", Properties.Resources.skorzane_buty);
+            zelaznaZbroja = new Uzbrojenie("Żelazna Zbroja", 0, 8, 0, "4X4444444", Properties.Resources.zelazna_zbroja);
+            zelazneSpodnie = new Uzbrojenie("Żelazne Spodnie", 0, 7, 0, "4444X44X4", Properties.Resources.zelazne_spodnie);
+            zelaznyHelm = new Uzbrojenie("Żelazny Hełm", 0, 5, 0, "4444X4XXX", "XXX4444X4", Properties.Resources.zelazny_helm);
+            zelazneButy = new Uzbrojenie("Żelazne Buty", 0, 4, 0, "XXX4X44X4", "4X44X4XXX", Properties.Resources.zelazne_buty);
+            obsydianowaZbroja = new Uzbrojenie("Obsydianowa Zbroja", 0, 0, 8, "5X5555555", Properties.Resources.obsydianowa_zbroja);
+            obsydianoweSpodnie = new Uzbrojenie("Obsydianowe Spodnie", 0, 0, 7, "5555X55X5", Properties.Resources.obsydianowe_spodnie);
+            obsydianowyHelm = new Uzbrojenie("Obsydianowy Helm", 0, 0, 5, "5555X5XXX", "XXX5555X5", Properties.Resources.obsydianowy_helm);
+            obsydianoweButy = new Uzbrojenie("Obsydianowe Buty", 0, 0, 4, "XXX5X55X5", "5X55X5XXX", Properties.Resources.obsydianowe_buty);
+            zelaznaTarcza = new Uzbrojenie("Żelazna tarcza", "434343434", Properties.Resources.zelazna_tarcza);
+            obsydianowaTarcza = new Uzbrojenie("Obsydianowa tarcza", "535353535", Properties.Resources.obsydianowa_tarcza);
+
+            kamiennyMiecz = new Bronie("Kamienny Miecz", 1, 2, 0, 0, "2XX2XX0XX", "X2XX2XX0X", "XX2XX2XX0", Properties.Resources.kamienny_miecz);                // kawalekDrewna 0, skora 1, kamien 2, drewno 3, zelazo 4, obsydian 5
+            zelaznyMiecz = new Bronie("Żelazny Miecz", 1, 0, 2, 0, "4XX4XX0XX", "X4XX4XX0X", "XX4XX4XX0", Properties.Resources.zelazny_miecz);                   // rudaZelaza 6, rudaObsydianu 7, welna 8, skorzanyPasek 9
+            obsydianowyMiecz = new Bronie("Obsydianowy Miecz", 1, 0, 0, 2, "5XX5XX0XX", "X5XX5XX0X", "XX5XX5XX0", Properties.Resources.obsydianowy_miecz);
+            luk = new Bronie("Łuk", 3, 3, "09X0X909X", "X909X0X90", Properties.Resources.luk);
+
+            ubraniaMieszkancow = new Inne("Ubrania mieszkańców", "888888888", Properties.Resources.ubrania_mieszkanców, 9);
+            lozko = new Inne("Łóżko", "888999333", Properties.Resources.łóżko, 3);
+
+            zwiadowca = new JednostkiGracza();
+            piechur = new JednostkiGracza("Piechur", 10, 10, 100, 1, 100, true, Properties.Resources.wojownikprawo, Properties.Resources.wojowniklewo, Properties.Resources.wojownikgora, Properties.Resources.wojownikdol);
+            lucznik = new JednostkiGracza("Łucznik", 20, 5, 50, 1, 300, false, Properties.Resources.lucznikprawo, Properties.Resources.luczniklewo, Properties.Resources.lucznikgora, Properties.Resources.lucznikdol);
+            rycerz = new JednostkiGracza("Rycerz", 40, 20, 200, 1, 100, true, Properties.Resources.rycerzprawo, Properties.Resources.rycerzlewo, Properties.Resources.rycerzgora, Properties.Resources.rycerzdol);
+            czarnyRycerz = new JednostkiGracza("Czarny rycerz", 10, 10, 100, 1, 100, true, Properties.Resources.czarnyrycerzprawo, Properties.Resources.czarnyrycerzlewo, Properties.Resources.czarnyrycerzgora, Properties.Resources.czarnyrycerzdol);
+            czarnyLucznik = new JednostkiGracza("Czarny łucznik", 20, 5, 50, 1, 300, false, Properties.Resources.czarnylucznikprawo, Properties.Resources.czarnyluczniklewo, Properties.Resources.czarnylucznikgora, Properties.Resources.czarnylucznikdol);
+
+            budynki.AddRange(new Budowle[] { tartak1, tartak2, kamieniolom1, kamieniolom2, kwateraRybacka, chataMaga, chatkaRolnika, hodowla, studnia, magazyn, targowisko, most, mur, koszary, budynekMieszkalny, kuznia });
+            surowce.AddRange(new Materialy[] { wood, stone, hay, skin, wool, food, water, ironOre, obsidianOre, iron, obsidian, leatherBelt, pieceOfWood });
+
+            timerCzasGry.Start();
+            //zagadka.obrazekLewo = "dinozaurmacius";
+            //zagadka.obrazekDol = "dinozaurmacius";
+
+            #region Przypisanie budowli do pictureBoxów
+
+            // nie mogłem wrzucić tego do konstruktora?
+
+            tartak1.pictureBox = pictureBoxTartak1;
+            tartak2.pictureBox = pictureBoxTartak2;
+            kamieniolom1.pictureBox = pictureBoxKamieniolom1;
+            kamieniolom2.pictureBox = pictureBoxKamieniolom2;
+            chatkaRolnika.pictureBox = pictureBoxChatkaRolnika;
+            kwateraRybacka.pictureBox = pictureBoxKwateraRybacka;
+            most.pictureBox = pictureBoxMost;
+            studnia.pictureBox = pictureBoxStudnia;
+            koszary.pictureBox = pictureBoxKoszary;
+            budynekMieszkalny.pictureBox = pictureBoxBudynekMieszkalny;
+            targowisko.pictureBox = pictureBoxTargowisko;
+            hodowla.pictureBox = pictureBoxHodowla;
+            chataMaga.pictureBox = pictureBoxChataMaga;
+            kuznia.pictureBox = pictureBoxKuznia;
+            magazyn.pictureBox = pictureBoxMagazyn;
+            mur.pictureBox = pictureBoxMur;
+
+            #endregion
+
+            #region Przypisanie pozycji budowlom
+
+            Budowle.PrzypiszPozycjeBudowli(budynki);
+
+            #endregion
         }
 
         private void timerCzasGry_Tick(object sender, EventArgs e)
         {
             PojemnośćMagazynu();
 
-            o.mieszkancy.liczebnoscWojsk = (o.zwiadowca.liczebnoscAtakujacych + o.piechur.liczebnoscAtakujacych + o.lucznik.liczebnoscAtakujacych + o.rycerz.liczebnoscAtakujacych + o.czarnyRycerz.liczebnoscAtakujacych + o.czarnyLucznik.liczebnoscAtakujacych + o.piechur.liczebnoscBroniacych + o.lucznik.liczebnoscBroniacych + o.rycerz.liczebnoscBroniacych + o.czarnyRycerz.liczebnoscBroniacych + o.czarnyLucznik.liczebnoscBroniacych);
+            mieszkancy.liczebnoscWojsk = (zwiadowca.liczebnoscAtakujacych + piechur.liczebnoscAtakujacych + lucznik.liczebnoscAtakujacych + rycerz.liczebnoscAtakujacych + czarnyRycerz.liczebnoscAtakujacych + czarnyLucznik.liczebnoscAtakujacych + piechur.liczebnoscBroniacych + lucznik.liczebnoscBroniacych + rycerz.liczebnoscBroniacych + czarnyRycerz.liczebnoscBroniacych + czarnyLucznik.liczebnoscBroniacych);
 
             if (budynekMieszkalny.pictureBox.Visible == true)
             {
-                if (o.mieszkancy.czyPrzyrostMieszkancow == true)
+                if (mieszkancy.czyPrzyrostMieszkancow == true)
                 {
                     timerMieszkancy.Start();
                 }
-                else if (o.mieszkancy.czyPrzyrostMieszkancow == false)
+                else if (mieszkancy.czyPrzyrostMieszkancow == false)
                 {
                     timerMieszkancy.Stop();
                 }
@@ -161,21 +474,20 @@ namespace Anteriora
 
             Zjedz();
             PobierzPodatek();
-
         }
 
         private void timerMieszkancy_Tick(object sender, EventArgs e)
         {
-            if (o.ubraniaMieszkancow.ilosc >= 1 && o.lozko.ilosc >= 1)
+            if (ubraniaMieszkancow.ilosc >= 1 && lozko.ilosc >= 1)
             {
-                o.ubraniaMieszkancow.ilosc--;
-                o.lozko.ilosc--;
-                o.mieszkancy.liczbaMieszkancow++;
+                ubraniaMieszkancow.ilosc--;
+                lozko.ilosc--;
+                mieszkancy.liczbaMieszkancow++;
             }
             else
             {
                 new Wiadomosc("Brakuje ubrań lub łóżek dla mieszkańców.").ShowDialog();
-                o.mieszkancy.czyPrzyrostMieszkancow = false;
+                mieszkancy.czyPrzyrostMieszkancow = false;
                 timerMieszkancy.Stop();
             }
         }
@@ -206,17 +518,19 @@ namespace Anteriora
             pictureBoxGraczPart5.Visible = false;
             //MessageBox.Show("Czas rozbudować osadę!");
 
+            new Panel(this).Show();
+
             new Wiadomosc("To idealne miejsce na zbudowanie osady.\n\nZarządzaj ją mądrze, każdy twój ruch ma swoje konsekwencje.").Show();
         }
      
         private void pictureBoxNamiotPoziom1_Click(object sender, EventArgs e)
         {
-            new Namiot(this, o).ShowDialog();
+            new Namiot(this).ShowDialog();
         }
         
         private void pictureBoxKoszary_Click(object sender, EventArgs e)
         {
-            new Koszary(o).ShowDialog();
+            new Koszary(this).ShowDialog();
         }
 
         /// <summary>
@@ -226,12 +540,12 @@ namespace Anteriora
         /// <param name="e"></param>
         private void pictureBoxTargowisko_Click(object sender, EventArgs e)
         {
-            new Targowisko(this, o).ShowDialog();
+            new Targowisko(this).ShowDialog();
         }
 
         private void pictureBoxWarsztat_Click(object sender, EventArgs e)
         {
-            new Kuznia(this, o).ShowDialog();
+            new Kuznia(this).ShowDialog();
         }
 
         private void buttonCzyszczenie_Click(object sender, EventArgs e)
@@ -243,16 +557,16 @@ namespace Anteriora
 
         public void PojemnośćMagazynu()
         {
-            if (o.magazyn.poziomUlepszenia == 0)
+            if (magazyn.poziomUlepszenia == 0)
             {
                 foreach (var item in surowce)
                 {
-                    if (item.ilosc > 999)
+                    if (item.quantity > 999)
                     {
                         i++;
-                        item.ilosc = 1000;
+                        item.quantity = 1000;
                     }
-                    else if (item.ilosc <= 999)
+                    else if (item.quantity <= 999)
                     {
                         i = i + 0;
                     }
@@ -273,16 +587,16 @@ namespace Anteriora
                 i = 0;
 
             }
-            else if (o.magazyn.poziomUlepszenia == 1)
+            else if (magazyn.poziomUlepszenia == 1)
             {
                 foreach (var item in surowce)
                 {
-                    if (item.ilosc > 999)
+                    if (item.quantity > 999)
                     {
                         i++;
-                        item.ilosc = 1000;
+                        item.quantity = 1000;
                     }
-                    else if (item.ilosc <= 999)
+                    else if (item.quantity <= 999)
                     {
                         i = i + 0;
                     }
@@ -301,16 +615,16 @@ namespace Anteriora
 
                 i = 0;
             }
-            else if (o.magazyn.poziomUlepszenia == 2)
+            else if (magazyn.poziomUlepszenia == 2)
             {
                 foreach (var item in surowce)
                 {
-                    if (item.ilosc > 1999)
+                    if (item.quantity > 1999)
                     {
                         i++;
-                        item.ilosc = 2000;
+                        item.quantity = 2000;
                     }
-                    else if (item.ilosc <= 1999)
+                    else if (item.quantity <= 1999)
                     {
                         i = i + 0;
                     }
@@ -329,16 +643,16 @@ namespace Anteriora
 
                 i = 0;
             }
-            else if (o.magazyn.poziomUlepszenia == 3)
+            else if (magazyn.poziomUlepszenia == 3)
             {
                 foreach (var item in surowce)
                 {
-                    if (item.ilosc > 2999)
+                    if (item.quantity > 2999)
                     {
                         i++;
-                        item.ilosc = 3000;
+                        item.quantity = 3000;
                     }
-                    else if (item.ilosc <= 2999)
+                    else if (item.quantity <= 2999)
                     {
                         i = i + 0;
                     }
@@ -401,9 +715,9 @@ namespace Anteriora
                     int wylosowana;
                     wylosowana = losowa.Next(0, 101);
 
-                    if (wylosowana <= o.zwiadowca.atak)
+                    if (wylosowana <= zwiadowca.atak)
                     {
-                        MessageBox.Show("udalo sie" + wylosowana.ToString() + " " + o.zwiadowca.atak.ToString());
+                        MessageBox.Show("udalo sie" + wylosowana.ToString() + " " + zwiadowca.atak.ToString());
 
                         if (osadaGoblinow.licznikZwiadowca == 1)
                         {
@@ -426,7 +740,7 @@ namespace Anteriora
                     }
                     else
                     {
-                        MessageBox.Show("nie udalo sie" + wylosowana.ToString() + " " + o.zwiadowca.atak.ToString());
+                        MessageBox.Show("nie udalo sie" + wylosowana.ToString() + " " + zwiadowca.atak.ToString());
                         osadaGoblinow.czasZwiadowcy = 0;
                         osadaGoblinow.akcjaZwiadowca = false;
                         timerZwiadowca.Stop();
@@ -442,9 +756,9 @@ namespace Anteriora
                     int wylosowana;
                     wylosowana = losowa.Next(0, 101);
 
-                    if (wylosowana <= o.zwiadowca.atak)
+                    if (wylosowana <= zwiadowca.atak)
                     {
-                        MessageBox.Show("udalo sie" + wylosowana.ToString() + " " + o.zwiadowca.atak.ToString());
+                        MessageBox.Show("udalo sie" + wylosowana.ToString() + " " + zwiadowca.atak.ToString());
 
                         if (jaskiniaWezy.licznikZwiadowca == 1)
                         {
@@ -462,7 +776,7 @@ namespace Anteriora
                     }
                     else
                     {
-                        MessageBox.Show("nie udalo sie" + wylosowana.ToString() + " " + o.zwiadowca.atak.ToString());
+                        MessageBox.Show("nie udalo sie" + wylosowana.ToString() + " " + zwiadowca.atak.ToString());
                         jaskiniaWezy.czasZwiadowcy = 0;
                         jaskiniaWezy.akcjaZwiadowca = false;
                         timerZwiadowca.Stop();
@@ -502,17 +816,16 @@ namespace Anteriora
 
         // metoda Zjedz() określa czynności związane z konsumpcją jedzenia i wody przez mieszkańców
         public void Zjedz()
-
         {
             if(czasDoZjedzenia == 10)
             {
-                int iloscDoSpozycia = (o.mieszkancy.liczbaPracujacychMieszkancow * o.mieszkancy.poziomPodatkow) + (o.mieszkancy.liczbaBezrobotnychMieszkancow * o.mieszkancy.poziomPodatkow / 2);
+                int iloscDoSpozycia = (mieszkancy.liczbaPracujacychMieszkancow * mieszkancy.poziomPodatkow) + (mieszkancy.liczbaBezrobotnychMieszkancow * mieszkancy.poziomPodatkow / 2);
                 
 
-                if (o.jedzenie.ilosc < iloscDoSpozycia || o.woda.ilosc < iloscDoSpozycia)
+                if (food.quantity < iloscDoSpozycia || water.quantity < iloscDoSpozycia)
                 {
-                    o.mieszkancy.poziomZadowolenia = 1;
-                    o.mieszkancy.poziomPodatkow = 1;
+                    mieszkancy.poziomZadowolenia = 1;
+                    mieszkancy.poziomPodatkow = 1;
                     ZmienNaGlod();
                 }
                 else
@@ -523,8 +836,8 @@ namespace Anteriora
                     }
                 }
 
-                o.jedzenie.ilosc -= iloscDoSpozycia;
-                o.woda.ilosc -= iloscDoSpozycia;
+                food.quantity -= iloscDoSpozycia;
+                water.quantity -= iloscDoSpozycia;
                 czasDoZjedzenia = 0;
             }
             else
@@ -552,50 +865,50 @@ namespace Anteriora
 
         private void timerPrzyrostDrewna_Tick(object sender, EventArgs e)
         {
-            o.drewno.ObliczPoziomUlepszenia(tartak1.poziomUlepszenia, tartak2.poziomUlepszenia);
-            o.drewno.ZwiekszPrzyrostMaterialu();
+            wood.ObliczPoziomUlepszenia(tartak1.poziomUlepszenia, tartak2.poziomUlepszenia);
+            wood.ZwiekszPrzyrostMaterialu();
         }
 
         private void timerPrzyrostKamienia_Tick(object sender, EventArgs e)
         {
-            o.kamień.ObliczPoziomUlepszenia(kamieniolom1.poziomUlepszenia, kamieniolom2.poziomUlepszenia, kopalniaKamienia.poziomUlepszenia);
-            o.kamień.ZwiekszPrzyrostMaterialu();
+            stone.ObliczPoziomUlepszenia(kamieniolom1.poziomUlepszenia, kamieniolom2.poziomUlepszenia, kopalniaKamienia.poziomUlepszenia);
+            stone.ZwiekszPrzyrostMaterialu();
         }
 
         private void timerPrzyrostSiana_Tick(object sender, EventArgs e)
         {
-            o.siano.ObliczPoziomUlepszenia(chatkaRolnika.poziomUlepszenia, 0);
-            o.siano.ZwiekszPrzyrostMaterialu();
+            hay.ObliczPoziomUlepszenia(chatkaRolnika.poziomUlepszenia, 0);
+            hay.ZwiekszPrzyrostMaterialu();
         }
 
         private void timerPrzyrostSkory_Tick(object sender, EventArgs e)
         {
-            o.skora.ObliczPoziomUlepszenia(hodowla.poziomUlepszenia, 0);
-            o.skora.ZwiekszPrzyrostMaterialu();
+            skin.ObliczPoziomUlepszenia(hodowla.poziomUlepszenia, 0);
+            skin.ZwiekszPrzyrostMaterialu();
         }
 
         private void TimerPrzyrostWelny_Tick(object sender, EventArgs e)
         {
-            o.welna.ObliczPoziomUlepszenia(hodowla.poziomUlepszenia, 0);
-            o.welna.ZwiekszPrzyrostMaterialu();
+            wool.ObliczPoziomUlepszenia(hodowla.poziomUlepszenia, 0);
+            wool.ZwiekszPrzyrostMaterialu();
         }
 
         private void timerPrzyrostJedzenia_Tick(object sender, EventArgs e)
         {
-            o.jedzenie.ObliczPoziomUlepszenia(hodowla.poziomUlepszenia, kwateraRybacka.poziomUlepszenia);
-            o.jedzenie.ZwiekszPrzyrostMaterialu();
+            food.ObliczPoziomUlepszenia(hodowla.poziomUlepszenia, kwateraRybacka.poziomUlepszenia);
+            food.ZwiekszPrzyrostMaterialu();
         }
 
         private void timerPrzyrostWody_Tick(object sender, EventArgs e)
         {
-            o.woda.ObliczPoziomUlepszenia(studnia.poziomUlepszenia, 0);
-            o.woda.ZwiekszPrzyrostMaterialu();
+            water.ObliczPoziomUlepszenia(studnia.poziomUlepszenia, 0);
+            water.ZwiekszPrzyrostMaterialu();
         }
 
         private void TimerPrzyrostRudyZelaza_Tick(object sender, EventArgs e)
         {
-            o.rudaZelaza.ObliczPoziomUlepszenia(kopalniaRudyZelaza1.poziomUlepszenia, kopalniaRudyZelaza2.poziomUlepszenia);
-            o.rudaZelaza.ZwiekszPrzyrostMaterialu();
+            ironOre.ObliczPoziomUlepszenia(kopalniaRudyZelaza1.poziomUlepszenia, kopalniaRudyZelaza2.poziomUlepszenia);
+            ironOre.ZwiekszPrzyrostMaterialu();
         }
 
         public void PobierzPodatek()
@@ -604,11 +917,11 @@ namespace Anteriora
             {
                 if(Materialy.glod == 1)
                 {
-                    o.zloto.ilosc += (o.mieszkancy.liczbaMieszkancow * o.mieszkancy.poziomPodatkow);
+                    gold.quantity += (mieszkancy.liczbaMieszkancow * mieszkancy.poziomPodatkow);
                 }
                 else if(Materialy.glod == 2)
                 {
-                    o.zloto.ilosc += 0;
+                    gold.quantity += 0;
                 }
                 
                 czasDoPobraniaPodatkow = 0;
@@ -666,7 +979,7 @@ namespace Anteriora
         //        budowle.pictureBox.Visible = true;
         //        budowle.poziomUlepszenia = 1;
         //        progressBar.Value = 0;
-        //        textBoxInformacja.AppendText("Wybudowano " + budowle.nazwa + "!");
+        //        textBoxInformacja.AppendText("Wybudowano " + budowle.name + "!");
         //        textBoxInformacja.AppendText(Environment.NewLine);
         //        timerSurowiec1.Start();
         //        timerSurowiec2.Start();
@@ -741,7 +1054,7 @@ namespace Anteriora
                     Budowa2(chatkaRolnika, timerPrzyrostSiana);
                     break;
                 case "magazyn":
-                    Budowa2(o.magazyn);
+                    Budowa2(magazyn);
                     break;
                 case "budynek mieszkalny":
                     Budowa2(budynekMieszkalny);
@@ -790,15 +1103,15 @@ namespace Anteriora
         {
             if (budowle.pictureBox.Visible == false)
             {
-                if (budowle.liczbaPracownikowPotrzebnychDoBudowy <= o.mieszkancy.liczbaBezrobotnychMieszkancow)
+                if (budowle.liczbaPracownikowPotrzebnychDoBudowy <= mieszkancy.liczbaBezrobotnychMieszkancow)
                 {
-                    if (material.ilosc >= ilosc && material2.ilosc >= ilosc2)
+                    if (material.quantity >= ilosc && material2.quantity >= ilosc2)
                     {
                         if (progressBar.Visible == false)
                         {
-                            material.ilosc -= ilosc;
-                            material2.ilosc -= ilosc2;
-                            o.mieszkancy.liczbaPracujacychMieszkancow += budowle.liczbaPracownikowPotrzebnychDoBudowy;
+                            material.quantity -= ilosc;
+                            material2.quantity -= ilosc2;
+                            mieszkancy.liczbaPracujacychMieszkancow += budowle.liczbaPracownikowPotrzebnychDoBudowy;
                             progressBar.Location = budowle.punkt;
                             progressBar.Visible = true;
                             progressBar.Maximum = budowle.ZwrocCzasTrwaniaBudowy();
@@ -829,16 +1142,16 @@ namespace Anteriora
 
         public void KosztBudowyInstancje(Materialy material, int ilosc, Materialy material2, int ilosc2, Budowle budowla)
         {
-            if (budowla.liczbaPracownikowPotrzebnychDoBudowy <= o.mieszkancy.liczbaBezrobotnychMieszkancow)
+            if (budowla.liczbaPracownikowPotrzebnychDoBudowy <= mieszkancy.liczbaBezrobotnychMieszkancow)
             {
-                if (material.ilosc >= ilosc && material2.ilosc >= ilosc2)
+                if (material.quantity >= ilosc && material2.quantity >= ilosc2)
                 {
                     // gdy czas jest równy 0, czyli na początku
                     if (budowla.progressBarBudowa.Visible == false)
                     {
-                        material.ilosc -= ilosc;
-                        material2.ilosc -= ilosc2;
-                        o.mieszkancy.liczbaPracujacychMieszkancow += budowla.liczbaPracownikowPotrzebnychDoBudowy;
+                        material.quantity -= ilosc;
+                        material2.quantity -= ilosc2;
+                        mieszkancy.liczbaPracujacychMieszkancow += budowla.liczbaPracownikowPotrzebnychDoBudowy;
                         budowla.progressBarBudowa.Location = budowla.punkt;
                         budowla.progressBarBudowa.Visible = true;
                         budowla.progressBarBudowa.Maximum = budowla.ZwrocCzasTrwaniaBudowy();
@@ -868,12 +1181,12 @@ namespace Anteriora
             {
                 if (budowle.pictureBox.Visible == true)
                 {
-                    if (material.ilosc >= (ilosc * budowle.poziomUlepszenia^2) && material2.ilosc >= (ilosc2 * budowle.poziomUlepszenia^2))
+                    if (material.quantity >= (ilosc * budowle.poziomUlepszenia^2) && material2.quantity >= (ilosc2 * budowle.poziomUlepszenia^2))
                     {
                         if (budowle.poziomUlepszenia < 3)
                         {
-                            material.ilosc -= ilosc;
-                            material2.ilosc -= ilosc2;
+                            material.quantity -= ilosc;
+                            material2.quantity -= ilosc2;
                             progressBar2.Location = budowle.punkt;
                             progressBar2.Visible = true;
                             progressBar2.Maximum = budowle.ZwrocCzasTrwaniaUlepszania();
@@ -905,10 +1218,10 @@ namespace Anteriora
         {
             if (budowla.progressBarUlepszanie.Visible == false)
             {
-                if (material.ilosc >= (ilosc * budowla.poziomUlepszenia ^ 2) && material2.ilosc >= (ilosc2 * budowla.poziomUlepszenia ^ 2))
+                if (material.quantity >= (ilosc * budowla.poziomUlepszenia ^ 2) && material2.quantity >= (ilosc2 * budowla.poziomUlepszenia ^ 2))
                 {
-                    material.ilosc -= ilosc;
-                    material2.ilosc -= ilosc2;
+                    material.quantity -= ilosc;
+                    material2.quantity -= ilosc2;
                     budowla.progressBarUlepszanie.Location = budowla.punkt;
                     budowla.pictureBox.Visible = false;
                     budowla.progressBarUlepszanie.Visible = true;
@@ -987,7 +1300,7 @@ namespace Anteriora
                     UlepszanieBudynkuOsada2(chatkaRolnika);
                     break;
                 case "magazyn":
-                    UlepszanieBudynkuOsada2(o.magazyn);
+                    UlepszanieBudynkuOsada2(magazyn);
                     break;
                 case "budynek mieszkalny":
                     UlepszanieBudynkuOsada2(budynekMieszkalny);

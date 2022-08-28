@@ -10,7 +10,6 @@ namespace Anteriora
     {
 
         Osada o1;
-        Poczatek o2;
 
         List<PictureBox> sloty = new List<PictureBox>();
 
@@ -29,10 +28,9 @@ namespace Anteriora
         int iloscWytwarzanychPrzedmiotow;
 
 
-        public Kuznia(Osada c1, Poczatek c2)
+        public Kuznia(Osada c1)
         {
             o1 = c1;
-            o2 = c2;
 
             InitializeComponent();
 
@@ -108,31 +106,30 @@ namespace Anteriora
                 }
             }
 
-            WytworzUzbrojenieSkorzane(o2.skorzanaZbroja);
-            WytworzUzbrojenieSkorzane(o2.skorzaneSpodnie);
-            WytworzUzbrojenieSkorzane(o2.skorzanyHelm);
-            WytworzUzbrojenieSkorzane(o2.skorzaneButy);
-            WytworzUzbrojenieZelazne(o2.zelaznaZbroja);
-            WytworzUzbrojenieZelazne(o2.zelazneSpodnie);
-            WytworzUzbrojenieZelazne(o2.zelaznyHelm);
-            WytworzUzbrojenieZelazne(o2.zelazneButy);
-            WytworzUzbrojenieObsydianowe(o2.obsydianowaZbroja);
-            WytworzUzbrojenieObsydianowe(o2.obsydianoweSpodnie);
-            WytworzUzbrojenieObsydianowe(o2.obsydianowyHelm);
-            WytworzUzbrojenieObsydianowe(o2.obsydianoweButy);
-            PrzetopRude(o2.zelazo, o2.rudaZelaza, rudaZelaza, zelazo);
-            PrzetopRude(o2.obsydian, o2.rudaObsydianu, rudaObsydianu, obsydian);
-            WytworzKamiennaBron(o2.kamiennyMiecz);
-            WytworzZelaznaBron(o2.zelaznyMiecz);
-            WytworzObsydianowaBron(o2.obsydianowyMiecz);
-            WytworzLuk(o2.luk);
+            WytworzUzbrojenieSkorzane(o1.skorzanaZbroja);
+            WytworzUzbrojenieSkorzane(o1.skorzaneSpodnie);
+            WytworzUzbrojenieSkorzane(o1.skorzanyHelm);
+            WytworzUzbrojenieSkorzane(o1.skorzaneButy);
+            WytworzUzbrojenieZelazne(o1.zelaznaZbroja);
+            WytworzUzbrojenieZelazne(o1.zelazneSpodnie);
+            WytworzUzbrojenieZelazne(o1.zelaznyHelm);
+            WytworzUzbrojenieZelazne(o1.zelazneButy);
+            WytworzUzbrojenieObsydianowe(o1.obsydianowaZbroja);
+            WytworzUzbrojenieObsydianowe(o1.obsydianoweSpodnie);
+            WytworzUzbrojenieObsydianowe(o1.obsydianowyHelm);
+            WytworzUzbrojenieObsydianowe(o1.obsydianoweButy);
+            PrzetopRude(o1.iron, o1.ironOre, rudaZelaza, zelazo);
+            PrzetopRude(o1.obsidian, o1.obsidianOre, rudaObsydianu, obsydian);
+            WytworzKamiennaBron(o1.kamiennyMiecz);
+            WytworzZelaznaBron(o1.zelaznyMiecz);
+            WytworzObsydianowaBron(o1.obsydianowyMiecz);
+            WytworzLuk(o1.luk);
             WytworzZelaznaTarcze();
             WytworzObsydianowaTarcze();
             WytworzUbraniaMieszkancow();
             WytworzLozko();
             RabDrewno();
             TnijSkore();
-
         }
 
         public void WytworzUzbrojenieSkorzane(Uzbrojenie uzbrojenie)
@@ -140,10 +137,10 @@ namespace Anteriora
             if (zawartosc == uzbrojenie.kod1 || zawartosc == uzbrojenie.kod2)
             {
                 int iloscPotrzebnegoMaterialu = uzbrojenie.iloscPotrzebnejSkory * iloscWytwarzanychPrzedmiotow;
-                if (o2.skora.ilosc >= iloscPotrzebnegoMaterialu)
+                if (o1.skin.quantity >= iloscPotrzebnegoMaterialu)
                 {
                     uzbrojenie.ilosc += iloscWytwarzanychPrzedmiotow;
-                    o2.skora.ilosc -= iloscPotrzebnegoMaterialu;
+                    o1.skin.quantity -= iloscPotrzebnegoMaterialu;
                     pictureBoxStworzonyPrzedmiot.BackgroundImage = uzbrojenie.obrazek;
                 }
                 else
@@ -158,10 +155,10 @@ namespace Anteriora
             if (zawartosc == uzbrojenie.kod1 || zawartosc == uzbrojenie.kod2)
             {
                 int iloscPotrzebnegoMaterialu = uzbrojenie.iloscPotrzebnegoZelaza * iloscWytwarzanychPrzedmiotow;
-                if (o2.zelazo.ilosc >= iloscPotrzebnegoMaterialu)
+                if (o1.iron.quantity >= iloscPotrzebnegoMaterialu)
                 {
                     uzbrojenie.ilosc += iloscWytwarzanychPrzedmiotow;
-                    o2.zelazo.ilosc -= iloscPotrzebnegoMaterialu;
+                    o1.iron.quantity -= iloscPotrzebnegoMaterialu;
                     pictureBoxStworzonyPrzedmiot.BackgroundImage = uzbrojenie.obrazek;
                 }
                 else
@@ -176,10 +173,10 @@ namespace Anteriora
             if (zawartosc == uzbrojenie.kod1 || zawartosc == uzbrojenie.kod2)
             {
                 int iloscPotrzebnegoMaterialu = uzbrojenie.iloscPotrzebnegoObsydianu * iloscWytwarzanychPrzedmiotow;
-                if (o2.obsydian.ilosc >= iloscPotrzebnegoMaterialu)
+                if (o1.obsidian.quantity >= iloscPotrzebnegoMaterialu)
                 {
                     uzbrojenie.ilosc += iloscWytwarzanychPrzedmiotow;
-                    o2.obsydian.ilosc -= iloscPotrzebnegoMaterialu;
+                    o1.obsidian.quantity -= iloscPotrzebnegoMaterialu;
                     pictureBoxStworzonyPrzedmiot.BackgroundImage = uzbrojenie.obrazek;
                     MessageBox.Show("Wytworzyłeś " + iloscWytwarzanychPrzedmiotow + " " + uzbrojenie.nazwa);
                 }
@@ -192,13 +189,13 @@ namespace Anteriora
 
         public void PrzetopRude(Materialy material, Materialy material2, Bitmap obrazek1, Bitmap obrazek2)
         {
-            if (sloty.FindAll(x => x.BackgroundImage == obrazek1).Count == Materialy.iloscPotrzebnejRudy)
+            if (sloty.FindAll(x => x.BackgroundImage == obrazek1).Count == Materialy.oreAmountNeeded)
             {
-                int iloscPotrzebnegoMaterialu = Materialy.iloscPotrzebnejRudy * iloscWytwarzanychPrzedmiotow;
-                if (material2.ilosc >= iloscPotrzebnegoMaterialu)
+                int iloscPotrzebnegoMaterialu = Materialy.oreAmountNeeded * iloscWytwarzanychPrzedmiotow;
+                if (material2.quantity >= iloscPotrzebnegoMaterialu)
                 {
-                    material.ilosc += iloscWytwarzanychPrzedmiotow;
-                    material2.ilosc -= iloscPotrzebnegoMaterialu;
+                    material.quantity += iloscWytwarzanychPrzedmiotow;
+                    material2.quantity -= iloscPotrzebnegoMaterialu;
                     pictureBoxStworzonyPrzedmiot.BackgroundImage = obrazek2;
                 }
                 else
@@ -212,10 +209,10 @@ namespace Anteriora
         {
             if (sloty.FindAll(x => x.BackgroundImage == drewno).Count == 1 && sloty.FindAll(x => x.BackgroundImage == null).Count == 8)
             {
-                if(o2.drewno.ilosc >= iloscWytwarzanychPrzedmiotow)
+                if(o1.wood.quantity >= iloscWytwarzanychPrzedmiotow)
                 {
-                    o2.kawalekDrewna.ilosc += 4 * iloscWytwarzanychPrzedmiotow;
-                    o2.drewno.ilosc -= iloscWytwarzanychPrzedmiotow;
+                    o1.pieceOfWood.quantity += 4 * iloscWytwarzanychPrzedmiotow;
+                    o1.wood.quantity -= iloscWytwarzanychPrzedmiotow;
                     pictureBoxStworzonyPrzedmiot.BackgroundImage = kawalekDrewna;
                 }
                 else
@@ -229,10 +226,10 @@ namespace Anteriora
         {
             if (sloty.FindAll(x => x.BackgroundImage == skora).Count == 1 && sloty.FindAll(x => x.BackgroundImage == null).Count == 8)
             {
-                if (o2.skora.ilosc >= iloscWytwarzanychPrzedmiotow)
+                if (o1.skin.quantity >= iloscWytwarzanychPrzedmiotow)
                 {
-                    o2.skorzanyPasek.ilosc += 4 * iloscWytwarzanychPrzedmiotow;
-                    o2.skora.ilosc -= iloscWytwarzanychPrzedmiotow;
+                    o1.leatherBelt.quantity += 4 * iloscWytwarzanychPrzedmiotow;
+                    o1.skin.quantity -= iloscWytwarzanychPrzedmiotow;
                     pictureBoxStworzonyPrzedmiot.BackgroundImage = skorzanyPasek;
                 }
                 else
@@ -249,11 +246,11 @@ namespace Anteriora
                 int iloscPotrzebnychKawalkowDrewna = bron.iloscPotrzebnychKawalkowDrewna * iloscWytwarzanychPrzedmiotow;
                 int iloscPotrzebnegoKamienia = bron.iloscPotrzebnegoKamienia * iloscWytwarzanychPrzedmiotow;
 
-                if(o2.kawalekDrewna.ilosc >= iloscPotrzebnychKawalkowDrewna && o2.kamień.ilosc >= iloscPotrzebnegoKamienia)
+                if(o1.pieceOfWood.quantity >= iloscPotrzebnychKawalkowDrewna && o1.stone.quantity >= iloscPotrzebnegoKamienia)
                 {
                     bron.ilosc += iloscWytwarzanychPrzedmiotow;
-                    o2.kawalekDrewna.ilosc -= iloscPotrzebnychKawalkowDrewna;
-                    o2.kamień.ilosc -= iloscPotrzebnegoKamienia;
+                    o1.pieceOfWood.quantity -= iloscPotrzebnychKawalkowDrewna;
+                    o1.stone.quantity -= iloscPotrzebnegoKamienia;
                     pictureBoxStworzonyPrzedmiot.BackgroundImage = bron.obrazek;
                 }
                 else
@@ -270,11 +267,11 @@ namespace Anteriora
                 int iloscPotrzebnychKawalkowDrewna = bron.iloscPotrzebnychKawalkowDrewna * iloscWytwarzanychPrzedmiotow;
                 int iloscPotrzebnegoZelaza = bron.iloscPotrzebnegoZelaza * iloscWytwarzanychPrzedmiotow;
 
-                if(o2.drewno.ilosc >= iloscPotrzebnychKawalkowDrewna && o2.zelazo.ilosc >= iloscPotrzebnegoZelaza)
+                if(o1.wood.quantity >= iloscPotrzebnychKawalkowDrewna && o1.stone.quantity >= iloscPotrzebnegoZelaza)
                 {
                     bron.ilosc += iloscWytwarzanychPrzedmiotow;
-                    o2.kawalekDrewna.ilosc -= iloscPotrzebnychKawalkowDrewna;
-                    o2.zelazo.ilosc -= iloscPotrzebnegoZelaza;
+                    o1.pieceOfWood.quantity -= iloscPotrzebnychKawalkowDrewna;
+                    o1.stone.quantity -= iloscPotrzebnegoZelaza;
                     pictureBoxStworzonyPrzedmiot.BackgroundImage = bron.obrazek;
                 }
                 else
@@ -292,11 +289,11 @@ namespace Anteriora
                 int iloscPotrzebnychKawalkowDrewna = bron.iloscPotrzebnychKawalkowDrewna * iloscWytwarzanychPrzedmiotow;
                 int iloscPotrzebnegoObsydianu = bron.iloscPotrzebnegoObsydianu * iloscWytwarzanychPrzedmiotow;
 
-                if(o2.drewno.ilosc >= iloscPotrzebnychKawalkowDrewna&& o2.obsydian.ilosc >= iloscPotrzebnegoObsydianu)
+                if(o1.wood.quantity >= iloscPotrzebnychKawalkowDrewna&& o1.obsidian.quantity >= iloscPotrzebnegoObsydianu)
                 {
                     bron.ilosc += iloscWytwarzanychPrzedmiotow;
-                    o2.kawalekDrewna.ilosc -= iloscPotrzebnychKawalkowDrewna;
-                    o2.obsydian.ilosc -= iloscPotrzebnegoObsydianu;
+                    o1.pieceOfWood.quantity -= iloscPotrzebnychKawalkowDrewna;
+                    o1.obsidian.quantity -= iloscPotrzebnegoObsydianu;
                     pictureBoxStworzonyPrzedmiot.BackgroundImage = bron.obrazek;
                 }
                 else
@@ -313,11 +310,11 @@ namespace Anteriora
                 int iloscPotrzebnychKawałkowDrewna = bron.iloscPotrzebnychKawalkowDrewna * iloscWytwarzanychPrzedmiotow;
                 int iloscPotrzebnychSkorzanychPaskow = bron.iloscPotrzebnychSkorzanychPaskow * iloscWytwarzanychPrzedmiotow;
 
-                if(o2.kawalekDrewna.ilosc >= iloscPotrzebnychKawałkowDrewna && o2.skorzanyPasek.ilosc >= iloscPotrzebnychSkorzanychPaskow)
+                if(o1.pieceOfWood.quantity >= iloscPotrzebnychKawałkowDrewna && o1.leatherBelt.quantity >= iloscPotrzebnychSkorzanychPaskow)
                 {
                     bron.ilosc += iloscWytwarzanychPrzedmiotow;
-                    o2.kawalekDrewna.ilosc -= iloscPotrzebnychKawałkowDrewna;
-                    o2.skorzanyPasek.ilosc -= iloscPotrzebnychSkorzanychPaskow;
+                    o1.pieceOfWood.quantity -= iloscPotrzebnychKawałkowDrewna;
+                    o1.leatherBelt.quantity -= iloscPotrzebnychSkorzanychPaskow;
                     pictureBoxStworzonyPrzedmiot.BackgroundImage = bron.obrazek;
                 }
                 else
@@ -330,18 +327,18 @@ namespace Anteriora
 
         public void WytworzZelaznaTarcze()
         {
-            if (zawartosc == o2.zelaznaTarcza.kod1)
+            if (zawartosc == o1.zelaznaTarcza.kod1)
             {
-                int iloscPotrzebnegoZelaza = o2.zelaznaTarcza.iloscPotrzebnegoZelaza * iloscWytwarzanychPrzedmiotow;
-                int iloscPotrzebnegoDrewna = o2.zelaznaTarcza.iloscPotrzebnegoDrewna * iloscWytwarzanychPrzedmiotow;
+                int iloscPotrzebnegoZelaza = o1.zelaznaTarcza.iloscPotrzebnegoZelaza * iloscWytwarzanychPrzedmiotow;
+                int iloscPotrzebnegoDrewna = o1.zelaznaTarcza.iloscPotrzebnegoDrewna * iloscWytwarzanychPrzedmiotow;
 
-                if (o2.zelazo.ilosc >= iloscPotrzebnegoZelaza && o2.drewno.ilosc >= iloscPotrzebnegoDrewna)
+                if (o1.iron.quantity >= iloscPotrzebnegoZelaza && o1.wood.quantity >= iloscPotrzebnegoDrewna)
                 {
-                    o2.zelaznaTarcza.ilosc += iloscWytwarzanychPrzedmiotow;
-                    o2.zelazo.ilosc -= iloscPotrzebnegoZelaza;
-                    o2.drewno.ilosc -= iloscPotrzebnegoDrewna;
-                    pictureBoxStworzonyPrzedmiot.BackgroundImage = o2.zelaznaTarcza.obrazek;
-                    MessageBox.Show("Wytworzyłeś " + iloscWytwarzanychPrzedmiotow + " " + o2.zelaznaTarcza.nazwa);
+                    o1.zelaznaTarcza.ilosc += iloscWytwarzanychPrzedmiotow;
+                    o1.iron.quantity -= iloscPotrzebnegoZelaza;
+                    o1.wood.quantity -= iloscPotrzebnegoDrewna;
+                    pictureBoxStworzonyPrzedmiot.BackgroundImage = o1.zelaznaTarcza.obrazek;
+                    MessageBox.Show("Wytworzyłeś " + iloscWytwarzanychPrzedmiotow + " " + o1.zelaznaTarcza.nazwa);
                 }
                 else
                 {
@@ -352,18 +349,18 @@ namespace Anteriora
 
         public void WytworzObsydianowaTarcze()
         {
-            if (zawartosc == o2.obsydianowaTarcza.kod1)
+            if (zawartosc == o1.obsydianowaTarcza.kod1)
             {
-                int iloscPotrzebnegoObsydianu = o2.obsydianowaTarcza.iloscPotrzebnegoObsydianu * iloscWytwarzanychPrzedmiotow;
-                int iloscPotrzebnegoDrewna = o2.obsydianowaTarcza.iloscPotrzebnegoDrewna * iloscWytwarzanychPrzedmiotow;
+                int iloscPotrzebnegoObsydianu = o1.obsydianowaTarcza.iloscPotrzebnegoObsydianu * iloscWytwarzanychPrzedmiotow;
+                int iloscPotrzebnegoDrewna = o1.obsydianowaTarcza.iloscPotrzebnegoDrewna * iloscWytwarzanychPrzedmiotow;
 
-                if (o2.obsydian.ilosc >= iloscPotrzebnegoObsydianu && o2.drewno.ilosc >= iloscPotrzebnegoDrewna)
+                if (o1.obsidian.quantity >= iloscPotrzebnegoObsydianu && o1.wood.quantity >= iloscPotrzebnegoDrewna)
                 {
-                    o2.obsydianowaTarcza.ilosc += iloscWytwarzanychPrzedmiotow;
-                    o2.obsydian.ilosc -= iloscPotrzebnegoObsydianu;
-                    o2.drewno.ilosc -= iloscPotrzebnegoDrewna;
-                    pictureBoxStworzonyPrzedmiot.BackgroundImage = o2.obsydianowaTarcza.obrazek;
-                    MessageBox.Show("Wytworzyłeś " + iloscWytwarzanychPrzedmiotow + " " + o2.obsydianowaTarcza.nazwa);
+                    o1.obsydianowaTarcza.ilosc += iloscWytwarzanychPrzedmiotow;
+                    o1.obsidian.quantity -= iloscPotrzebnegoObsydianu;
+                    o1.wood.quantity -= iloscPotrzebnegoDrewna;
+                    pictureBoxStworzonyPrzedmiot.BackgroundImage = o1.obsydianowaTarcza.obrazek;
+                    MessageBox.Show("Wytworzyłeś " + iloscWytwarzanychPrzedmiotow + " " + o1.obsydianowaTarcza.nazwa);
                 }
                 else
                 {
@@ -374,16 +371,16 @@ namespace Anteriora
 
         public void WytworzUbraniaMieszkancow()
         {
-            if(zawartosc == o2.ubraniaMieszkancow.kod1)
+            if(zawartosc == o1.ubraniaMieszkancow.kod1)
             {
-                int iloscPotrzebnejWelny = o2.ubraniaMieszkancow.iloscPotrzebnejWelny * iloscWytwarzanychPrzedmiotow;
+                int iloscPotrzebnejWelny = o1.ubraniaMieszkancow.iloscPotrzebnejWelny * iloscWytwarzanychPrzedmiotow;
 
-                if(o2.welna.ilosc >= iloscPotrzebnejWelny)
+                if(o1.wool.quantity >= iloscPotrzebnejWelny)
                 {
-                    o2.ubraniaMieszkancow.ilosc += iloscWytwarzanychPrzedmiotow;
-                    o2.welna.ilosc -= iloscPotrzebnejWelny;
-                    pictureBoxStworzonyPrzedmiot.BackgroundImage = o2.ubraniaMieszkancow.obrazek;
-                    MessageBox.Show("Wytworzyłeś " + iloscWytwarzanychPrzedmiotow + " " + o2.ubraniaMieszkancow.nazwa);
+                    o1.ubraniaMieszkancow.ilosc += iloscWytwarzanychPrzedmiotow;
+                    o1.wool.quantity -= iloscPotrzebnejWelny;
+                    pictureBoxStworzonyPrzedmiot.BackgroundImage = o1.ubraniaMieszkancow.obrazek;
+                    MessageBox.Show("Wytworzyłeś " + iloscWytwarzanychPrzedmiotow + " " + o1.ubraniaMieszkancow.nazwa);
                 }
                 else
                 {
@@ -394,20 +391,20 @@ namespace Anteriora
 
         public void WytworzLozko()
         {
-            if(zawartosc == o2.lozko.kod1)
+            if(zawartosc == o1.lozko.kod1)
             {
-                int iloscPotrzebnejWelny = o2.lozko.iloscPotrzebnejWelny * iloscWytwarzanychPrzedmiotow;
-                int iloscPotrzebnychSkorzanychPaskow = o2.lozko.iloscPotrzebnychSkorzanychPaskow * iloscWytwarzanychPrzedmiotow;
-                int iloscPotrzebnegoDrewna = o2.lozko.iloscPotrzebnegoDrewna * iloscWytwarzanychPrzedmiotow;
+                int iloscPotrzebnejWelny = o1.lozko.iloscPotrzebnejWelny * iloscWytwarzanychPrzedmiotow;
+                int iloscPotrzebnychSkorzanychPaskow = o1.lozko.iloscPotrzebnychSkorzanychPaskow * iloscWytwarzanychPrzedmiotow;
+                int iloscPotrzebnegoDrewna = o1.lozko.iloscPotrzebnegoDrewna * iloscWytwarzanychPrzedmiotow;
 
-                if(o2.welna.ilosc >= iloscPotrzebnejWelny && o2.skorzanyPasek.ilosc >= iloscPotrzebnychSkorzanychPaskow && o2.drewno.ilosc >= iloscPotrzebnegoDrewna)
+                if(o1.wool.quantity >= iloscPotrzebnejWelny && o1.leatherBelt.quantity >= iloscPotrzebnychSkorzanychPaskow && o1.wood.quantity >= iloscPotrzebnegoDrewna)
                 {
-                    o2.lozko.ilosc += iloscWytwarzanychPrzedmiotow;
-                    o2.welna.ilosc -= iloscPotrzebnejWelny;
-                    o2.skorzanyPasek.ilosc -= iloscPotrzebnychSkorzanychPaskow;
-                    o2.drewno.ilosc -= iloscPotrzebnegoDrewna;
-                    pictureBoxStworzonyPrzedmiot.BackgroundImage = o2.lozko.obrazek;
-                    MessageBox.Show("Wytworzyłeś " + iloscWytwarzanychPrzedmiotow + " " + o2.lozko.nazwa);
+                    o1.lozko.ilosc += iloscWytwarzanychPrzedmiotow;
+                    o1.wool.quantity -= iloscPotrzebnejWelny;
+                    o1.leatherBelt.quantity -= iloscPotrzebnychSkorzanychPaskow;
+                    o1.wood.quantity -= iloscPotrzebnegoDrewna;
+                    pictureBoxStworzonyPrzedmiot.BackgroundImage = o1.lozko.obrazek;
+                    MessageBox.Show("Wytworzyłeś " + iloscWytwarzanychPrzedmiotow + " " + o1.lozko.nazwa);
                 }
                 else
                 {

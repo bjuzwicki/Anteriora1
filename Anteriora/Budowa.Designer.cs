@@ -572,6 +572,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Budowa";
+            this.Load += new System.EventHandler(this.Budowa_Load);
             this.ResumeLayout(false);
 
         }

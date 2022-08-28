@@ -13,13 +13,11 @@ namespace Anteriora
     public partial class LodowaKraina : Form
     {
         Osada o1;
-        Poczatek o2;
         Mapa o3;
 
-        public LodowaKraina(Osada c1, Poczatek c2, Mapa c3)
+        public LodowaKraina(Osada c1, Mapa c3)
         {
             o1 = c1;
-            o2 = c2;
             o3 = c3;
             InitializeComponent();
 

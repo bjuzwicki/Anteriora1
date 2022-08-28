@@ -32,7 +32,9 @@ namespace Anteriora
         public bool czyBudowlaIstnieje3 { get; set; }
         public Timer timerMapa { get; set; }
 
-        public Instancje(string nazwa, int czasRuchuWrogow, int czasRuchuZwiadowcy, string obrazekLewo, string obrazekGora, string obrazekDol)
+        public Instancje(string nazwa, int czasRuchuWrogow, int czasRuchuZwiadowcy, string obrazekLewo, string obrazekGora, string obrazekDol, bool czyBlokadaIstnieje1 = true, bool czyBlokadaIstnieje2 = true,
+                          bool czyBudowlaIstnieje1 = false, bool czyBudowlaIstnieje2 = false, bool czyBudowlaIstnieje3 = false, int czasWroga = 0, int czasZwiadowcy = 0, int licznikZwiadowca = 1, bool akcjaWrog = false,
+                          int postep = 0, bool akcjaZwiadowca = false, bool enablePoziom1 = true, bool enablePoziom2 = true, bool enablePoziom3 = true, bool enablePoziom4 = true, bool enablePoziom5 = true)
         {
             this.nazwa = nazwa;
             this.czasRuchuWrogow = czasRuchuWrogow;
@@ -41,23 +43,23 @@ namespace Anteriora
             this.obrazekGora = obrazekGora;
             this.obrazekDol = obrazekDol;
 
-            czyBlokadaIstnieje1 = true;
-            czyBlokadaIstnieje2 = true;
-            czyBudowlaIstnieje1 = false;
-            czyBudowlaIstnieje2 = false;
-            czyBudowlaIstnieje3 = false;
+            this.czyBlokadaIstnieje1 = czyBlokadaIstnieje1;
+            this.czyBlokadaIstnieje2 = czyBlokadaIstnieje2;
+            this.czyBudowlaIstnieje1 = czyBudowlaIstnieje1;
+            this.czyBudowlaIstnieje2 = czyBudowlaIstnieje2;
+            this.czyBudowlaIstnieje3 = czyBudowlaIstnieje3;
 
-            czasWroga = 0;
-            czasZwiadowcy = 0;
-            licznikZwiadowca = 1;
-            akcjaWrog = false;
-            postep = 0;
-            akcjaZwiadowca = false;
-            enablePoziom1 = true;
-            enablePoziom2 = false;
-            enablePoziom3 = false;
-            enablePoziom4 = false;
-            enablePoziom5 = false;
+            this.czasWroga = czasWroga;
+            this.czasZwiadowcy = czasZwiadowcy;
+            this.licznikZwiadowca = licznikZwiadowca;
+            this.akcjaWrog = akcjaWrog;
+            this.postep = postep;
+            this.akcjaZwiadowca = akcjaZwiadowca;
+            this.enablePoziom1 = enablePoziom1;
+            this.enablePoziom2 = enablePoziom2;
+            this.enablePoziom3 = enablePoziom3;
+            this.enablePoziom4 = enablePoziom4;
+            this.enablePoziom5 = enablePoziom5;
         }
     }
 }

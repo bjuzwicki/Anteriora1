@@ -13,10 +13,10 @@ namespace Anteriora
     
     public partial class Koszary : Form
     {
-        readonly Poczatek o;
+        readonly Osada o;
         int zmianaObrazka = 1;
 
-        public Koszary(Poczatek c)
+        public Koszary(Osada c)
         {
             o = c;
             InitializeComponent();
@@ -35,13 +35,13 @@ namespace Anteriora
             {
                 if (o.skorzanaZbroja.ilosc >= 1 && o.skorzaneButy.ilosc >= 1 && o.skorzaneSpodnie.ilosc >= 1 && o.skorzanyHelm.ilosc >= 1)
                 {
-                    if (o.zloto.ilosc >= 30)
+                    if (o.gold.quantity >= 30)
                     {
                         o.skorzanaZbroja.ilosc--;
                         o.skorzaneButy.ilosc--;
                         o.skorzaneSpodnie.ilosc--;
                         o.skorzanyHelm.ilosc--;
-                        o.zloto.ilosc -= 30;
+                        o.gold.quantity -= 30;
                         o.zwiadowca.liczebnoscAtakujacych++;
                     }
                     else
@@ -71,14 +71,14 @@ namespace Anteriora
             {
                 if(o.skorzanaZbroja.ilosc >= 1 && o.skorzaneButy.ilosc >= 1 && o.skorzaneSpodnie.ilosc >= 1 && o.skorzanyHelm.ilosc >= 1 && o.kamiennyMiecz.ilosc >= 1)
                 {
-                    if(o.zloto.ilosc >= 10)
+                    if(o.gold.quantity >= 10)
                     {
                         o.skorzanaZbroja.ilosc--;
                         o.skorzaneButy.ilosc--;
                         o.skorzaneSpodnie.ilosc--;
                         o.skorzanyHelm.ilosc--;
                         o.kamiennyMiecz.ilosc--;
-                        o.zloto.ilosc -= 10;
+                        o.gold.quantity -= 10;
                         o.piechur.liczebnoscAtakujacych++;
                     }
                     else
@@ -108,14 +108,14 @@ namespace Anteriora
             {
                 if (o.skorzanaZbroja.ilosc >= 1 && o.skorzaneButy.ilosc >= 1 && o.skorzaneSpodnie.ilosc >= 1 && o.skorzanyHelm.ilosc >= 1 && o.luk.ilosc >= 1)
                 {
-                    if (o.zloto.ilosc >= 15)
+                    if (o.gold.quantity >= 15)
                     {
                         o.skorzanaZbroja.ilosc--;
                         o.skorzaneButy.ilosc--;
                         o.skorzaneSpodnie.ilosc--;
                         o.skorzanyHelm.ilosc--;
                         o.luk.ilosc--;
-                        o.zloto.ilosc -= 15;
+                        o.gold.quantity -= 15;
                         o.lucznik.liczebnoscAtakujacych++;
                     }
                     else
@@ -145,7 +145,7 @@ namespace Anteriora
             {
                 if (o.zelaznaZbroja.ilosc >= 1 && o.zelazneButy.ilosc >= 1 && o.zelazneSpodnie.ilosc >= 1 && o.zelaznyHelm.ilosc >= 1 && o.zelaznyMiecz.ilosc >= 1 && o.zelaznaTarcza.ilosc >= 1)
                 {
-                    if (o.zloto.ilosc >= 50)
+                    if (o.gold.quantity >= 50)
                     {
                         o.zelaznaZbroja.ilosc--;
                         o.zelazneButy.ilosc--;
@@ -153,7 +153,7 @@ namespace Anteriora
                         o.zelaznyHelm.ilosc--;
                         o.zelaznyMiecz.ilosc--;
                         o.zelaznaTarcza.ilosc--;
-                        o.zloto.ilosc -= 50;
+                        o.gold.quantity -= 50;
                         o.rycerz.liczebnoscAtakujacych++;
                     }
                     else
@@ -183,7 +183,7 @@ namespace Anteriora
             {
                 if (o.obsydianowaZbroja.ilosc >= 1 && o.obsydianoweButy.ilosc >= 1 && o.obsydianoweSpodnie.ilosc >= 1 && o.obsydianowyHelm.ilosc >= 1 && o.obsydianowyMiecz.ilosc >= 1 && o.obsydianowaTarcza.ilosc >= 1)
                 {
-                    if (o.zloto.ilosc >= 100)
+                    if (o.gold.quantity >= 100)
                     {
                         o.obsydianowaZbroja.ilosc--;
                         o.obsydianoweButy.ilosc--;
@@ -191,7 +191,7 @@ namespace Anteriora
                         o.obsydianowyHelm.ilosc--;
                         o.obsydianowyMiecz.ilosc--;
                         o.obsydianowaTarcza.ilosc--;
-                        o.zloto.ilosc -= 100;
+                        o.gold.quantity -= 100;
                         o.czarnyRycerz.liczebnoscAtakujacych++;
                     }
                     else
@@ -221,14 +221,14 @@ namespace Anteriora
             {
                 if (o.obsydianowaZbroja.ilosc >= 1 && o.obsydianoweButy.ilosc >= 1 && o.obsydianoweSpodnie.ilosc >= 1 && o.obsydianowyHelm.ilosc >= 1 && o.luk.ilosc >= 1)
                 {
-                    if (o.zloto.ilosc >= 150)
+                    if (o.gold.quantity >= 150)
                     {
                         o.obsydianowaZbroja.ilosc--;
                         o.obsydianoweButy.ilosc--;
                         o.obsydianoweSpodnie.ilosc--;
                         o.obsydianowyHelm.ilosc--;
                         o.luk.ilosc--;
-                        o.zloto.ilosc -= 150;
+                        o.gold.quantity -= 150;
                         o.czarnyLucznik.liczebnoscAtakujacych++;
                     }
                     else
@@ -289,9 +289,9 @@ namespace Anteriora
             if(jednostka.poziomUlepszenia < 3)
             {
                 int kosztUlepszenia = iloscMonet * jednostka.poziomUlepszenia;
-                if(o.zloto.ilosc >= kosztUlepszenia)
+                if(o.gold.quantity >= kosztUlepszenia)
                 {
-                    o.zloto.ilosc -= kosztUlepszenia;
+                    o.gold.quantity -= kosztUlepszenia;
                     jednostka.poziomUlepszenia++;
                 }
                 else
@@ -306,7 +306,6 @@ namespace Anteriora
         }
 
         #endregion ulepszanie jednostek
-
 
         #region timer
         private void timerKoszary_Tick(object sender, EventArgs e)

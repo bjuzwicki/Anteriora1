@@ -12,13 +12,13 @@ namespace Anteriora
 {
     public partial class Panel8 : Form
     {
-        Poczatek o1;
+        Osada o1;
         Panel o2;
 
         bool czyRuch;
         Point start = new Point(0, 0);
 
-        public Panel8(Poczatek c1, Panel c2)
+        public Panel8(Osada c1, Panel c2)
         {
             o1 = c1;
             o2 = c2;

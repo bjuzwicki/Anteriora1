@@ -13,7 +13,6 @@ namespace Anteriora
     public partial class Mapa : Form
     {
         Osada o1;
-        Poczatek o2;
 
         #region punkty ruchu wroga
 
@@ -32,10 +31,9 @@ namespace Anteriora
 
         #endregion punkty ruchu wroga
 
-        public Mapa(Osada c1, Poczatek c2)
+        public Mapa(Osada c1)
         {
             o1 = c1;
-            o2 = c2;
             InitializeComponent();
             timerPoruszanieWroga.Start();
         }
@@ -50,23 +48,17 @@ namespace Anteriora
 
         private void pictureBoxOsadaGoblinow_Click(object sender, EventArgs e)
         {
-            //new OsadaGoblinow1(o1).ShowDialog();
-            //new MenuPolaBitwy(o1, this, 1).ShowDialog();
-            //new OsadaGoblinow(o1, o2, this).Show();
             this.Visible = false;
-            new EkranLadowania(o2, o1, this, 3).Show();
+            new EkranLadowania(null, o1, this, 3).Show();
         }
 
         private void pictureBoxJaskiniaWezy_Click(object sender, EventArgs e)
         {
-            //new MenuPolaBitwy(o1, this, 2).ShowDialog();
-            new JaskiniaWezy(o1, o2, this).Show();
+            new JaskiniaWezy(o1, this).Show();
         }
 
         private void timerPoruszanieWroga_Tick(object sender, EventArgs e)
-        {
-                 
-            
+        {  
             #region osada goblinow
             if (o1.osadaGoblinow.czasWroga < o1.osadaGoblinow.czasRuchuWrogow - 2)
             {
@@ -126,9 +118,9 @@ namespace Anteriora
             {
                 if (instancja.licznikZwiadowca < licznik)
                 {
-                    if (o2.zwiadowca.liczebnoscAtakujacych == 1)
+                    if (o1.zwiadowca.liczebnoscAtakujacych == 1)
                     {
-                        o2.zwiadowca.liczebnoscAtakujacych--;
+                        o1.zwiadowca.liczebnoscAtakujacych--;
                         instancja.akcjaZwiadowca = true;
                         o1.timerZwiadowca.Start();
                         MessageBox.Show("Wysłałeś zwiadowcę.");
@@ -162,7 +154,7 @@ namespace Anteriora
 
         private void pictureBoxLodowaKraina_Click(object sender, EventArgs e)
         {
-            new LodowaKraina(o1, o2, this).Show();
+            new LodowaKraina(o1, this).Show();
         }
 
         private void pictureBoxOgnistaKraina_Click(object sender, EventArgs e)

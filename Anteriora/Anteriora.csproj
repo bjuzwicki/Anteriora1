@@ -218,7 +218,7 @@
     <Compile Include="PoleBitwy.Designer.cs">
       <DependentUpon>PoleBitwy.cs</DependentUpon>
     </Compile>
-    <Compile Include="PostacGracza.cs" />
+    <Compile Include="Character.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -227,12 +227,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="RestClient.cs" />
+    <Compile Include="SQLConnection.cs" />
     <Compile Include="Start.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Start.Designer.cs">
       <DependentUpon>Start.cs</DependentUpon>
     </Compile>
+    <Compile Include="User.cs" />
     <Compile Include="Uzbrojenie.cs" />
     <Compile Include="Przeciwnicy.cs" />
     <Compile Include="Targowisko.cs">
@@ -252,12 +254,6 @@
     </Compile>
     <Compile Include="Wiadomosc.Designer.cs">
       <DependentUpon>Wiadomosc.cs</DependentUpon>
-    </Compile>
-    <Compile Include="WyborPostaci.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="WyborPostaci.Designer.cs">
-      <DependentUpon>WyborPostaci.cs</DependentUpon>
     </Compile>
     <Compile Include="Wyposazenie.cs" />
     <Compile Include="Zarzadzanie.cs">
@@ -360,9 +356,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Wiadomosc.resx">
       <DependentUpon>Wiadomosc.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="WyborPostaci.resx">
-      <DependentUpon>WyborPostaci.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Zarzadzanie.resx">
       <DependentUpon>Zarzadzanie.cs</DependentUpon>

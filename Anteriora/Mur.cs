@@ -12,14 +12,12 @@ namespace Anteriora
 {
     public partial class Mur : Form
     {
-        PoleBitwy p;
-        Poczatek o1;
-        Osada o2;
+        //PoleBitwy p;
+        Osada o;
 
-        public Mur(Poczatek c1, Osada c2)
+        public Mur(Osada c)
         {
-            o1 = c1;
-            o2 = c2;
+            o = c;
             InitializeComponent();
             timer.Start();
         }
@@ -27,67 +25,67 @@ namespace Anteriora
         private void ButtonPowrot_Click(object sender, EventArgs e)
         {
             this.Close();
-            new OblezenieOsady(o1,o2,o2.osadaGoblinow,o2.osadaGoblinow1).Show();
+            new OblezenieOsady(o,o.osadaGoblinow,o.osadaGoblinow1).Show();
         }
 
         private void Timer_Tick(object sender, EventArgs e)
         {
            
-            labelLiczebnoscPiechur.Text = o1.piechur.liczebnoscAtakujacych.ToString();
-            labelLiczebnoscLucznik.Text = o1.lucznik.liczebnoscAtakujacych.ToString();
-            labelLiczebnoscRycerz.Text = o1.rycerz.liczebnoscAtakujacych.ToString();
-            labelLiczebnoscCzarnyRycerz.Text = o1.czarnyRycerz.liczebnoscAtakujacych.ToString();
-            labelLiczebnoscCzarnyLucznik.Text = o1.czarnyLucznik.liczebnoscAtakujacych.ToString();
-            labelLiczebnoscPiechurMur.Text = o1.piechur.liczebnoscBroniacych.ToString();
-            labelLiczebnoscLucznikMur.Text = o1.lucznik.liczebnoscBroniacych.ToString();
-            labelLiczebnoscRycerzMur.Text = o1.rycerz.liczebnoscBroniacych.ToString();
-            labelLiczebnoscCzarnyRycerzMur.Text = o1.czarnyRycerz.liczebnoscBroniacych.ToString();
-            labelLiczebnoscCzarnyLucznikMur.Text = o1.czarnyLucznik.liczebnoscBroniacych.ToString();
+            labelLiczebnoscPiechur.Text = o.piechur.liczebnoscAtakujacych.ToString();
+            labelLiczebnoscLucznik.Text = o.lucznik.liczebnoscAtakujacych.ToString();
+            labelLiczebnoscRycerz.Text = o.rycerz.liczebnoscAtakujacych.ToString();
+            labelLiczebnoscCzarnyRycerz.Text = o.czarnyRycerz.liczebnoscAtakujacych.ToString();
+            labelLiczebnoscCzarnyLucznik.Text = o.czarnyLucznik.liczebnoscAtakujacych.ToString();
+            labelLiczebnoscPiechurMur.Text = o.piechur.liczebnoscBroniacych.ToString();
+            labelLiczebnoscLucznikMur.Text = o.lucznik.liczebnoscBroniacych.ToString();
+            labelLiczebnoscRycerzMur.Text = o.rycerz.liczebnoscBroniacych.ToString();
+            labelLiczebnoscCzarnyRycerzMur.Text = o.czarnyRycerz.liczebnoscBroniacych.ToString();
+            labelLiczebnoscCzarnyLucznikMur.Text = o.czarnyLucznik.liczebnoscBroniacych.ToString();
 
-            if (o1.piechur.liczebnoscBroniacych > 0)
+            if (o.piechur.liczebnoscBroniacych > 0)
             {
-                pictureBoxPiechurMur.Image = o1.piechur.obrazekGora;
+                pictureBoxPiechurMur.Image = o.piechur.obrazekGora;
             }
             else
             {
                 pictureBoxPiechurMur.Image = null;
             }
 
-            if(o1.lucznik.liczebnoscBroniacych > 0)
+            if(o.lucznik.liczebnoscBroniacych > 0)
             {
-                pictureBoxLucznikMur.Image = o1.lucznik.obrazekGora;
+                pictureBoxLucznikMur.Image = o.lucznik.obrazekGora;
             }
             else
             {
                 pictureBoxLucznikMur.Image = null;
             }
 
-            if(o1.rycerz.liczebnoscBroniacych > 0)
+            if(o.rycerz.liczebnoscBroniacych > 0)
             {
-                pictureBoxRycerzMur.Image = o1.rycerz.obrazekGora;
+                pictureBoxRycerzMur.Image = o.rycerz.obrazekGora;
             }
             else
             {
                 pictureBoxRycerzMur.Image = null;
             }
 
-            if(o1.czarnyRycerz.liczebnoscBroniacych > 0)
+            if(o.czarnyRycerz.liczebnoscBroniacych > 0)
             {
-                pictureBoxCzarnyRycerzMur.Image = o1.czarnyRycerz.obrazekGora;
+                pictureBoxCzarnyRycerzMur.Image = o.czarnyRycerz.obrazekGora;
             }
             else
             {
                 pictureBoxCzarnyRycerzMur.Image = null;
             }
 
-            if(o1.czarnyLucznik.liczebnoscBroniacych > 0 )
+            if(o.czarnyLucznik.liczebnoscBroniacych > 0 )
             {
-                pictureBoxCzarnyLucznikMur.Image = o1.czarnyLucznik.obrazekGora;
+                pictureBoxCzarnyLucznikMur.Image = o.czarnyLucznik.obrazekGora;
             }
             else
             {
                 pictureBoxCzarnyLucznikMur.Image = null;
-            }            
+            }  
         }
 
         #region Wpisywanie tylko cyfr do textboxow
@@ -156,27 +154,27 @@ namespace Anteriora
 
         private void ButtonWyslijPiechur_Click(object sender, EventArgs e)
         {
-            WyslijJednostkeNaMur(o1.piechur, textBoxIloscWyslijPiechur);
+            WyslijJednostkeNaMur(o.piechur, textBoxIloscWyslijPiechur);
         }
 
         private void ButtonWyslijLucznik_Click(object sender, EventArgs e)
         {
-            WyslijJednostkeNaMur(o1.lucznik, textBoxIloscWyslijLucznik);
+            WyslijJednostkeNaMur(o.lucznik, textBoxIloscWyslijLucznik);
         }
 
         private void ButtonWyslijRycerz_Click(object sender, EventArgs e)
         {
-            WyslijJednostkeNaMur(o1.rycerz, textBoxIloscWyslijRycerz);
+            WyslijJednostkeNaMur(o.rycerz, textBoxIloscWyslijRycerz);
         }
 
         private void ButtonWyslijCzarnyRycerz_Click(object sender, EventArgs e)
         {
-            WyslijJednostkeNaMur(o1.czarnyRycerz, textBoxIloscWyslijCzarnyRycerz);
+            WyslijJednostkeNaMur(o.czarnyRycerz, textBoxIloscWyslijCzarnyRycerz);
         }
 
         private void ButtonWyslijCzarnyLucznik_Click(object sender, EventArgs e)
         {
-            WyslijJednostkeNaMur(o1.czarnyLucznik, textBoxIloscWyslijCzarnyLucznik);
+            WyslijJednostkeNaMur(o.czarnyLucznik, textBoxIloscWyslijCzarnyLucznik);
         }
 
         public void WyslijJednostkeNaMur(JednostkiGracza jednostka, TextBox textbox)
@@ -200,27 +198,27 @@ namespace Anteriora
 
         private void ButtonOdeslijPiechur_Click(object sender, EventArgs e)
         {
-            OdeslijJednostke(o1.piechur, textBoxIloscOdeslijPiechur);
+            OdeslijJednostke(o.piechur, textBoxIloscOdeslijPiechur);
         }
 
         private void ButtonOdeslijRycerz_Click(object sender, EventArgs e)
         {
-            OdeslijJednostke(o1.rycerz, textBoxIloscOdeslijRycerz);
+            OdeslijJednostke(o.rycerz, textBoxIloscOdeslijRycerz);
         }
 
         private void ButtonOdeslijCzarnyRycerz_Click(object sender, EventArgs e)
         {
-            OdeslijJednostke(o1.czarnyRycerz, textBoxIloscOdeslijCzarnyRycerz);
+            OdeslijJednostke(o.czarnyRycerz, textBoxIloscOdeslijCzarnyRycerz);
         }
 
         private void ButtonOdeslijLucznik_Click(object sender, EventArgs e)
         {
-            OdeslijJednostke(o1.lucznik, textBoxIloscOdeslijLucznik);
+            OdeslijJednostke(o.lucznik, textBoxIloscOdeslijLucznik);
         }
 
         private void ButtonOdeslijCzarnyLucznik_Click(object sender, EventArgs e)
         {
-            OdeslijJednostke(o1.czarnyLucznik, textBoxIloscOdeslijCzarnyLucznik);
+            OdeslijJednostke(o.czarnyLucznik, textBoxIloscOdeslijCzarnyLucznik);
         }
 
         public void OdeslijJednostke(JednostkiGracza jednostka, TextBox textbox)

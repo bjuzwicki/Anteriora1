@@ -13,11 +13,9 @@ namespace Anteriora
     public partial class Targowisko : Form
     {
         Osada o1;
-        Poczatek o2;
-        public Targowisko(Osada copyForm, Poczatek copyForm2)
+        public Targowisko(Osada c1)
         {
-            o1 = copyForm;
-            o2 = copyForm2;
+            o1 = c1;
             InitializeComponent();
         }
         /// <summary>
@@ -28,52 +26,52 @@ namespace Anteriora
         #region Zamiana surowców na złoto i złoto na surowce
         private void buttonZlotoNaWode_Click(object sender, EventArgs e)
         {
-            Zamiana(o2.zloto, 2, o2.woda, 50);
+            Zamiana(o1.gold, 2, o1.water, 50);
         }
 
         private void buttonWodaNaZloto_Click(object sender, EventArgs e)
         {
-            Zamiana(o2.woda, 100, o2.zloto, 1);
+            Zamiana(o1.water, 100, o1.gold, 1);
         }
 
         private void buttonZlotoNaJedzenie_Click(object sender, EventArgs e)
         {
-            Zamiana(o2.zloto, 2, o2.jedzenie, 60);
+            Zamiana(o1.gold, 2, o1.food, 60);
         }
 
         private void buttonJedzenieNaZloto_Click(object sender, EventArgs e)
         {
-            Zamiana(o2.jedzenie, 120, o2.zloto, 1);
+            Zamiana(o1.food, 120, o1.gold, 1);
         }
 
         private void buttonZlotoNaSiano_Click(object sender, EventArgs e)
         {
-            Zamiana(o2.zloto, 2, o2.siano, 40);
+            Zamiana(o1.gold, 2, o1.hay, 40);
         }
 
         private void buttonSianoNaZloto_Click(object sender, EventArgs e)
         {
-            Zamiana(o2.siano, 80, o2.zloto, 1);
+            Zamiana(o1.hay, 80, o1.gold, 1);
         }
 
         private void buttonZlotoNaKamien_Click(object sender, EventArgs e)
         {
-            Zamiana(o2.zloto, 2, o2.kamień, 50);
+            Zamiana(o1.gold, 2, o1.stone, 50);
         }
 
         private void buttonKamienNaZloto_Click(object sender, EventArgs e)
         {
-            Zamiana(o2.kamień, 100, o2.zloto, 1);
+            Zamiana(o1.stone, 100, o1.gold, 1);
         }
 
         private void buttonZlotoNaDrewno_Click(object sender, EventArgs e)
         {
-            Zamiana(o2.zloto, 2, o2.drewno, 100);
+            Zamiana(o1.gold, 2, o1.wood, 100);
         }
 
         private void buttonDrewnoNaZloto_Click(object sender, EventArgs e)
         {
-            Zamiana(o2.drewno, 200, o2.zloto, 1);
+            Zamiana(o1.wood, 200, o1.gold, 1);
         }
 
         #endregion
@@ -87,10 +85,10 @@ namespace Anteriora
         /// <param name="ilosc2"></param>
         public void Zamiana(Materialy materialy, int ilosc, Materialy materialy2, int ilosc2)
         {
-            if(materialy.ilosc >= ilosc)
+            if(materialy.quantity >= ilosc)
             {
-                materialy.ilosc -= ilosc;
-                materialy2.ilosc += ilosc2;
+                materialy.quantity -= ilosc;
+                materialy2.quantity += ilosc2;
             }
             else
             {

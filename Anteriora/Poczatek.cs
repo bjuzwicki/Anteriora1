@@ -12,56 +12,60 @@ namespace Anteriora
 {
     public partial class Poczatek : Form
     {
+        public int woodQuantity = 0;
+        public int hayQuantity = 0;
+        public int stoneQuantiy = 0;
+        public int foodQuantity = 0;
         // nowe obiekty klasy Materiały - surowce
 
-        public Mieszkancy mieszkancy = new Mieszkancy();
+        //public Mieszkancy mieszkancy = new Mieszkancy();
         
-        public Materialy drewno = new Materialy(2000);
-        public Materialy siano = new Materialy(2000);
-        public Materialy kamień = new Materialy(2000);
-        public Materialy jedzenie = new Materialy(2000);
-        public Materialy woda = new Materialy(2000);
-        public Materialy skora = new Materialy(0);
-        public Materialy zloto = new Materialy(100);
-        public Materialy rudaZelaza = new Materialy(100);
-        public Materialy rudaObsydianu = new Materialy(100);
-        public Materialy welna = new Materialy(24);
-        public Materialy zelazo = new Materialy(24);
-        public Materialy obsydian = new Materialy(24);
-        public Materialy skorzanyPasek = new Materialy(24);
-        public Materialy kawalekDrewna = new Materialy(24);
+        //public Materialy drewno = new Materialy(2000);
+        //public Materialy siano = new Materialy(2000);
+        //public Materialy kamień = new Materialy(2000);
+        //public Materialy jedzenie = new Materialy(2000);
+        //public Materialy woda = new Materialy(2000);
+        //public Materialy skora = new Materialy(0);
+        //public Materialy zloto = new Materialy(100);
+        //public Materialy rudaZelaza = new Materialy(100);
+        //public Materialy rudaObsydianu = new Materialy(100);
+        //public Materialy welna = new Materialy(24);
+        //public Materialy zelazo = new Materialy(24);
+        //public Materialy obsydian = new Materialy(24);
+        //public Materialy skorzanyPasek = new Materialy(24);
+        //public Materialy kawalekDrewna = new Materialy(24);
 
-        public Uzbrojenie skorzanaZbroja = new Uzbrojenie("Skórzana Zbroja", 8, 0, 0, "1X1111111", Properties.Resources.skorzana_zbroja);
-        public Uzbrojenie skorzaneSpodnie = new Uzbrojenie("Skórzane Spodnie", 7, 0, 0, "1111X11X1", Properties.Resources.skorzane_spodnie);
-        public Uzbrojenie skorzanyHelm = new Uzbrojenie("Skórzany Hełm", 5, 0, 0, "1111X1XXX", "XXX1111X1", Properties.Resources.skorzany_helm);
-        public Uzbrojenie skorzaneButy = new Uzbrojenie("Skórzane Buty", 4, 0, 0,"XXX1X11X1", "1X11X1XXX", Properties.Resources.skorzane_buty);
-        public Uzbrojenie zelaznaZbroja = new Uzbrojenie("Żelazna Zbroja", 0, 8, 0, "4X4444444", Properties.Resources.zelazna_zbroja);
-        public Uzbrojenie zelazneSpodnie = new Uzbrojenie("Żelazne Spodnie", 0, 7, 0, "4444X44X4", Properties.Resources.zelazne_spodnie);
-        public Uzbrojenie zelaznyHelm = new Uzbrojenie("Żelazny Hełm", 0, 5, 0, "4444X4XXX", "XXX4444X4", Properties.Resources.zelazny_helm);
-        public Uzbrojenie zelazneButy = new Uzbrojenie("Żelazne Buty", 0, 4, 0, "XXX4X44X4", "4X44X4XXX", Properties.Resources.zelazne_buty);
-        public Uzbrojenie obsydianowaZbroja = new Uzbrojenie("Obsydianowa Zbroja", 0, 0, 8, "5X5555555", Properties.Resources.obsydianowa_zbroja);
-        public Uzbrojenie obsydianoweSpodnie = new Uzbrojenie("Obsydianowe Spodnie", 0, 0, 7, "5555X55X5", Properties.Resources.obsydianowe_spodnie);
-        public Uzbrojenie obsydianowyHelm = new Uzbrojenie("Obsydianowy Helm", 0, 0, 5, "5555X5XXX", "XXX5555X5", Properties.Resources.obsydianowy_helm);
-        public Uzbrojenie obsydianoweButy = new Uzbrojenie("Obsydianowe Buty", 0, 0, 4, "XXX5X55X5", "5X55X5XXX", Properties.Resources.obsydianowe_buty);
-        public Uzbrojenie zelaznaTarcza = new Uzbrojenie("Żelazna tarcza", "434343434", Properties.Resources.zelazna_tarcza);
-        public Uzbrojenie obsydianowaTarcza = new Uzbrojenie("Obsydianowa tarcza", "535353535", Properties.Resources.obsydianowa_tarcza);
+        //public Uzbrojenie skorzanaZbroja = new Uzbrojenie("Skórzana Zbroja", 8, 0, 0, "1X1111111", Properties.Resources.skorzana_zbroja);
+        //public Uzbrojenie skorzaneSpodnie = new Uzbrojenie("Skórzane Spodnie", 7, 0, 0, "1111X11X1", Properties.Resources.skorzane_spodnie);
+        //public Uzbrojenie skorzanyHelm = new Uzbrojenie("Skórzany Hełm", 5, 0, 0, "1111X1XXX", "XXX1111X1", Properties.Resources.skorzany_helm);
+        //public Uzbrojenie skorzaneButy = new Uzbrojenie("Skórzane Buty", 4, 0, 0,"XXX1X11X1", "1X11X1XXX", Properties.Resources.skorzane_buty);
+        //public Uzbrojenie zelaznaZbroja = new Uzbrojenie("Żelazna Zbroja", 0, 8, 0, "4X4444444", Properties.Resources.zelazna_zbroja);
+        //public Uzbrojenie zelazneSpodnie = new Uzbrojenie("Żelazne Spodnie", 0, 7, 0, "4444X44X4", Properties.Resources.zelazne_spodnie);
+        //public Uzbrojenie zelaznyHelm = new Uzbrojenie("Żelazny Hełm", 0, 5, 0, "4444X4XXX", "XXX4444X4", Properties.Resources.zelazny_helm);
+        //public Uzbrojenie zelazneButy = new Uzbrojenie("Żelazne Buty", 0, 4, 0, "XXX4X44X4", "4X44X4XXX", Properties.Resources.zelazne_buty);
+        //public Uzbrojenie obsydianowaZbroja = new Uzbrojenie("Obsydianowa Zbroja", 0, 0, 8, "5X5555555", Properties.Resources.obsydianowa_zbroja);
+        //public Uzbrojenie obsydianoweSpodnie = new Uzbrojenie("Obsydianowe Spodnie", 0, 0, 7, "5555X55X5", Properties.Resources.obsydianowe_spodnie);
+        //public Uzbrojenie obsydianowyHelm = new Uzbrojenie("Obsydianowy Helm", 0, 0, 5, "5555X5XXX", "XXX5555X5", Properties.Resources.obsydianowy_helm);
+        //public Uzbrojenie obsydianoweButy = new Uzbrojenie("Obsydianowe Buty", 0, 0, 4, "XXX5X55X5", "5X55X5XXX", Properties.Resources.obsydianowe_buty);
+        //public Uzbrojenie zelaznaTarcza = new Uzbrojenie("Żelazna tarcza", "434343434", Properties.Resources.zelazna_tarcza);
+        //public Uzbrojenie obsydianowaTarcza = new Uzbrojenie("Obsydianowa tarcza", "535353535", Properties.Resources.obsydianowa_tarcza);
 
-        public Bronie kamiennyMiecz = new Bronie("Kamienny Miecz", 1, 2, 0, 0, "2XX2XX0XX", "X2XX2XX0X", "XX2XX2XX0", Properties.Resources.kamienny_miecz);                // kawalekDrewna 0, skora 1, kamien 2, drewno 3, zelazo 4, obsydian 5
-        public Bronie zelaznyMiecz = new Bronie("Żelazny Miecz", 1, 0, 2, 0, "4XX4XX0XX", "X4XX4XX0X", "XX4XX4XX0", Properties.Resources.zelazny_miecz);                   // rudaZelaza 6, rudaObsydianu 7, welna 8, skorzanyPasek 9
-        public Bronie obsydianowyMiecz = new Bronie("Obsydianowy Miecz", 1, 0, 0, 2, "5XX5XX0XX", "X5XX5XX0X", "XX5XX5XX0", Properties.Resources.obsydianowy_miecz);
-        public Bronie luk = new Bronie("Łuk", 3, 3, "09X0X909X","X909X0X90",Properties.Resources.luk);
+        //public Bronie kamiennyMiecz = new Bronie("Kamienny Miecz", 1, 2, 0, 0, "2XX2XX0XX", "X2XX2XX0X", "XX2XX2XX0", Properties.Resources.kamienny_miecz);                // kawalekDrewna 0, skora 1, kamien 2, drewno 3, zelazo 4, obsydian 5
+        //public Bronie zelaznyMiecz = new Bronie("Żelazny Miecz", 1, 0, 2, 0, "4XX4XX0XX", "X4XX4XX0X", "XX4XX4XX0", Properties.Resources.zelazny_miecz);                   // rudaZelaza 6, rudaObsydianu 7, welna 8, skorzanyPasek 9
+        //public Bronie obsydianowyMiecz = new Bronie("Obsydianowy Miecz", 1, 0, 0, 2, "5XX5XX0XX", "X5XX5XX0X", "XX5XX5XX0", Properties.Resources.obsydianowy_miecz);
+        //public Bronie luk = new Bronie("Łuk", 3, 3, "09X0X909X","X909X0X90",Properties.Resources.luk);
 
-        public Inne ubraniaMieszkancow = new Inne("Ubrania mieszkańców", "888888888", Properties.Resources.ubrania_mieszkanców, 9);
-        public Inne lozko = new Inne("Łóżko", "888999333", Properties.Resources.łóżko, 3);
+        //public Inne ubraniaMieszkancow = new Inne("Ubrania mieszkańców", "888888888", Properties.Resources.ubrania_mieszkanców, 9);
+        //public Inne lozko = new Inne("Łóżko", "888999333", Properties.Resources.łóżko, 3);
 
-        public JednostkiGracza zwiadowca = new JednostkiGracza();
-        public JednostkiGracza piechur = new JednostkiGracza("Piechur", 10, 10, 100, 1, 100, true, Properties.Resources.wojownikprawo, Properties.Resources.wojowniklewo, Properties.Resources.wojownikgora, Properties.Resources.wojownikdol);
-        public JednostkiGracza lucznik = new JednostkiGracza("Łucznik", 20, 5, 50, 1, 300, false, Properties.Resources.lucznikprawo, Properties.Resources.luczniklewo, Properties.Resources.lucznikgora, Properties.Resources.lucznikdol);
-        public JednostkiGracza rycerz = new JednostkiGracza("Rycerz", 40, 20, 200, 1, 100, true, Properties.Resources.rycerzprawo, Properties.Resources.rycerzlewo, Properties.Resources.rycerzgora, Properties.Resources.rycerzdol);
-        public JednostkiGracza czarnyRycerz = new JednostkiGracza("Czarny rycerz", 10, 10, 100, 1, 100, true, Properties.Resources.czarnyrycerzprawo, Properties.Resources.czarnyrycerzlewo, Properties.Resources.czarnyrycerzgora, Properties.Resources.czarnyrycerzdol);
-        public JednostkiGracza czarnyLucznik = new JednostkiGracza("Czarny łucznik", 20, 5, 50, 1, 300, false, Properties.Resources.czarnylucznikprawo, Properties.Resources.czarnyluczniklewo, Properties.Resources.czarnylucznikgora, Properties.Resources.czarnylucznikdol);
+        //public JednostkiGracza zwiadowca = new JednostkiGracza();
+        //public JednostkiGracza piechur = new JednostkiGracza("Piechur", 10, 10, 100, 1, 100, true, Properties.Resources.wojownikprawo, Properties.Resources.wojowniklewo, Properties.Resources.wojownikgora, Properties.Resources.wojownikdol);
+        //public JednostkiGracza lucznik = new JednostkiGracza("Łucznik", 20, 5, 50, 1, 300, false, Properties.Resources.lucznikprawo, Properties.Resources.luczniklewo, Properties.Resources.lucznikgora, Properties.Resources.lucznikdol);
+        //public JednostkiGracza rycerz = new JednostkiGracza("Rycerz", 40, 20, 200, 1, 100, true, Properties.Resources.rycerzprawo, Properties.Resources.rycerzlewo, Properties.Resources.rycerzgora, Properties.Resources.rycerzdol);
+        //public JednostkiGracza czarnyRycerz = new JednostkiGracza("Czarny rycerz", 10, 10, 100, 1, 100, true, Properties.Resources.czarnyrycerzprawo, Properties.Resources.czarnyrycerzlewo, Properties.Resources.czarnyrycerzgora, Properties.Resources.czarnyrycerzdol);
+        //public JednostkiGracza czarnyLucznik = new JednostkiGracza("Czarny łucznik", 20, 5, 50, 1, 300, false, Properties.Resources.czarnylucznikprawo, Properties.Resources.czarnyluczniklewo, Properties.Resources.czarnylucznikgora, Properties.Resources.czarnylucznikdol);
 
-        public Budowle magazyn = new Budowle("magazyn", 1);
+        //public Budowle magazyn = new Budowle("magazyn", 1);
 
         // przydaje sie przy zapobiegnięciu spamu messageBoxami
         public int flaga;
@@ -72,15 +76,14 @@ namespace Anteriora
         {
             InitializeComponent();
 
-            new Panel(this).Show();
+            //new Panel(this).Show();
 
-            pictureBoxGraczPart1.BackgroundImage = PostacGracza.obrazekDol;
-            pictureBoxGraczPart2.BackgroundImage = PostacGracza.obrazekLewo;
-            pictureBoxGraczPart3.BackgroundImage = PostacGracza.obrazekGora;
-            pictureBoxGraczPart4.BackgroundImage = PostacGracza.obrazekDol;
+            pictureBoxGraczPart1.BackgroundImage = Character.pictureDown;
+            pictureBoxGraczPart2.BackgroundImage = Character.pictureLeft;
+            pictureBoxGraczPart3.BackgroundImage = Character.pictureUp;
+            pictureBoxGraczPart4.BackgroundImage = Character.pictureDown;
 
             timerCzasGry.Start();
-
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -92,7 +95,6 @@ namespace Anteriora
 
         private void timerCzasGry_Tick(object sender, EventArgs e)
         {
-
             czasGry++;
             //drewno.liczebnoscAtakujacych = 5000;
             //kamień.liczebnoscAtakujacych = 5000;
@@ -105,7 +107,7 @@ namespace Anteriora
         {
             if (czasGry == 1)
             {
-                new Wiadomosc("Witaj, " + PostacGracza.nazwa + "!" + "\n\nTwój statek zatonął. Niewielu pozostało.\n\nAle nic straconego. Twoja misja wciąż trwa. W końcu odnalazłeś nieznany ląd, prawda? Rozejrzyj się trochę.\n\nPoruszaj się z punktu do punktu za pomocą LPM.").Show();
+                new Wiadomosc("Witaj, " + Character.characterName + "!" + "\n\nTwój statek zatonął. Niewielu pozostało.\n\nAle nic straconego. Twoja misja wciąż trwa. W końcu odnalazłeś nieznany ląd, prawda? Rozejrzyj się trochę.\n\nPoruszaj się z punktu do punktu za pomocą LPM.").Show();
             }
 
         }
@@ -122,7 +124,7 @@ namespace Anteriora
             if (dialogResult == DialogResult.Yes)
             {
                 pictureBoxLodkaMapa1.Visible = false;
-                drewno.ilosc += rnd.Next(10, 30);
+                woodQuantity += rnd.Next(10, 30);
             }
         }
 
@@ -152,9 +154,9 @@ namespace Anteriora
                 DialogResult dialogResult = MessageBox.Show("Czy chcesz popłynąć łódką po skarb?", "", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    drewno.ilosc += rnd.Next(1, 10);
-                    siano.ilosc += rnd.Next(1, 10);
-                    kamień.ilosc += rnd.Next(1, 10);
+                    woodQuantity += rnd.Next(1, 10);
+                    hayQuantity += rnd.Next(1, 10);
+                    stoneQuantiy += rnd.Next(1, 10);
                     pictureBoxSkarb.Visible = false;
                     MessageBox.Show("W skrzynce znalazłeś trochę materiałów!");
 
@@ -213,15 +215,15 @@ namespace Anteriora
             pictureBoxGraczPart3.Visible = true;
             if(flaga == 0)
             {
-               //MessageBox.Show("Muszę zebrać drewno, aby wybudować most!");
+                MessageBox.Show("Muszę zebrać drewno, aby wybudować most!");
                 flaga++;
             }            
-            else if (drewno.ilosc >= 50)
+            else if (woodQuantity >= 50)
             {
-                drewno.ilosc -= 50;
+                woodQuantity -= 50;
                 pictureBoxMostMapa1.Visible = true;
                 pictureBoxBrakMostu.Visible = false;
-                //MessageBox.Show("Jest lekko niestabilny, muszę uważać.");
+                MessageBox.Show("Jest lekko niestabilny, muszę uważać.");
             }
         }
 
@@ -286,7 +288,7 @@ namespace Anteriora
             if (dialogResult == DialogResult.Yes)
             {
                 MessageBox.Show("Utknąłeś. Zanim się uwolniłeś robaczki zjadły Twoje całe jedzenie!");
-                jedzenie.ilosc = 0;
+                foodQuantity = 0;
             }
         }
 
@@ -315,27 +317,27 @@ namespace Anteriora
 
         private void pictureBoxDrewnoKawalek1_Click(object sender, EventArgs e)
         {
-            ZbierzMaterial(drewno, 20, 40, pictureBoxDrewnoKawalek1);
+            CollectMateials(ref woodQuantity, 20, 40, pictureBoxDrewnoKawalek1);
         }
 
         private void pictureBoxDrewnoKawalek2_Click(object sender, EventArgs e)
         {
-            ZbierzMaterial(drewno, 20, 40, pictureBoxDrewnoKawalek2);
+            CollectMateials(ref woodQuantity, 20, 40, pictureBoxDrewnoKawalek2);
         }
 
         private void pictureBoxDrewnoKawalek3_Click(object sender, EventArgs e)
         {
-            ZbierzMaterial(drewno, 20, 40, pictureBoxDrewnoKawalek3);
+            CollectMateials(ref woodQuantity, 20, 40, pictureBoxDrewnoKawalek3);
         }
 
         private void pictureBoxDrewnoKawalek4_Click(object sender, EventArgs e)
         {
-            ZbierzMaterial(drewno, 20, 40, pictureBoxDrewnoKawalek4);
+            CollectMateials(ref woodQuantity, 20, 40, pictureBoxDrewnoKawalek4);
         }
 
         private void pictureBoxDrewnoKawalek5_Click(object sender, EventArgs e)
         {
-            ZbierzMaterial(drewno, 20, 40, pictureBoxDrewnoKawalek5);
+            CollectMateials(ref woodQuantity, 20, 40, pictureBoxDrewnoKawalek5);
         }
 
         #endregion
@@ -344,33 +346,33 @@ namespace Anteriora
 
         private void pictureBoxJablko1_Click(object sender, EventArgs e)
         {
-            ZbierzMaterial(jedzenie, 1, 3, pictureBoxJablko1);
+            CollectMateials(ref foodQuantity, 1, 3, pictureBoxJablko1);
         }
 
         private void pictureBoxJablko2_Click(object sender, EventArgs e)
         {
-            ZbierzMaterial(jedzenie, 1, 3, pictureBoxJablko2);
+            CollectMateials(ref foodQuantity, 1, 3, pictureBoxJablko2);
         }
 
         private void pictureBoxJablko3_Click(object sender, EventArgs e)
         {
-            ZbierzMaterial(jedzenie, 1, 3, pictureBoxJablko3);
+            CollectMateials(ref foodQuantity, 1, 3, pictureBoxJablko3);
         }
 
         private void pictureBoxJablko4_Click(object sender, EventArgs e)
         {
-            ZbierzMaterial(jedzenie, 1, 3, pictureBoxJablko4);
+            CollectMateials(ref foodQuantity, 1, 3, pictureBoxJablko4);
 
         }
 
         private void pictureBoxJablko5_Click(object sender, EventArgs e)
         {
-            ZbierzMaterial(jedzenie, 1, 3, pictureBoxJablko5);
+            CollectMateials(ref foodQuantity, 1, 3, pictureBoxJablko5);
         }
 
         private void pictureBoxJablko6_Click(object sender, EventArgs e)
         {
-            ZbierzMaterial(jedzenie, 1, 3, pictureBoxJablko6);
+            CollectMateials(ref foodQuantity, 1, 3, pictureBoxJablko6);
         }
 
 
@@ -380,41 +382,41 @@ namespace Anteriora
 
         private void pictureBoxSiano1_Click(object sender, EventArgs e)
         {
-            ZbierzMaterial(siano, 20, 40, pictureBoxSiano1);
+            CollectMateials(ref hayQuantity, 20, 40, pictureBoxSiano1);
         }
 
         private void pictureBoxSiano2_Click(object sender, EventArgs e)
         {
-            ZbierzMaterial(siano, 20, 40, pictureBoxSiano2);
+            CollectMateials(ref hayQuantity, 20, 40, pictureBoxSiano2);
         }
 
         private void pictureBoxSiano3_Click(object sender, EventArgs e)
         {
-            ZbierzMaterial(siano, 20, 40, pictureBoxSiano3);
+            CollectMateials(ref hayQuantity, 20, 40, pictureBoxSiano3);
         }
 
         private void pictureBoxSiano4_Click(object sender, EventArgs e)
         {
-            ZbierzMaterial(siano, 20, 40, pictureBoxSiano4);
+            CollectMateials(ref hayQuantity, 20, 40, pictureBoxSiano4);
         }
 
         private void pictureBoxSiano5_Click(object sender, EventArgs e)
         {
-            ZbierzMaterial(siano, 20, 40, pictureBoxSiano5);
+            CollectMateials(ref hayQuantity, 20, 40, pictureBoxSiano5);
         }
 
         private void pictureBoxSianoX_Click(object sender, EventArgs e)
         {
-            ZbierzMaterial(siano, 20, 40, pictureBoxSianoX);
+            CollectMateials(ref hayQuantity, 20, 40, pictureBoxSianoX);
             MessageBox.Show("Wąż czający się w zbożu zjadł całe Twoje jedzenie!");
-            jedzenie.ilosc = 0;
+            foodQuantity = 0;
         }
 
         #endregion
 
-        public void ZbierzMaterial(Materialy material, int ilosc1, int ilosc2, PictureBox picturebox)
+        public void CollectMateials(ref int materialQuantity, int quantity1, int quantity2, PictureBox picturebox)
         {
-            material.ilosc += rnd.Next(ilosc1, ilosc2);
+            materialQuantity += rnd.Next(quantity1, quantity2);
             picturebox.Visible = false;
         }
     }

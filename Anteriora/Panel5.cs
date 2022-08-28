@@ -13,13 +13,13 @@ namespace Anteriora
 {
     public partial class Panel5 : Form
     {
-        Poczatek o1;
+        Osada o1;
         Panel o2;
 
         bool czyRuch;
         Point start = new Point(0, 0);
 
-        public Panel5(Poczatek c1, Panel c2)
+        public Panel5(Osada c1, Panel c2)
         {
             o1 = c1;
             o2 = c2;
@@ -29,23 +29,23 @@ namespace Anteriora
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-            labelSkora.Text = o1.skora.ilosc.ToString();
-            labelRudaZelaza.Text = o1.rudaZelaza.ilosc.ToString();
-            labelZelazo.Text = o1.zelazo.ilosc.ToString();
-            labelRudaObsydianu.Text = o1.rudaObsydianu.ilosc.ToString();
-            labelObsydian.Text = o1.obsydian.ilosc.ToString();
-            labelKawalekDrewna.Text = o1.kawalekDrewna.ilosc.ToString();
-            labelSkorzanyPasek.Text = o1.skorzanyPasek.ilosc.ToString();
-            labelWelna.Text = o1.welna.ilosc.ToString();
+            labelSkora.Text = o1.skin.quantity.ToString();
+            labelRudaZelaza.Text = o1.ironOre.quantity.ToString();
+            labelZelazo.Text = o1.iron.quantity.ToString();
+            labelRudaObsydianu.Text = o1.obsidianOre.quantity.ToString();
+            labelObsydian.Text = o1.obsidian.quantity.ToString();
+            labelKawalekDrewna.Text = o1.pieceOfWood.quantity.ToString();
+            labelSkorzanyPasek.Text = o1.leatherBelt.quantity.ToString();
+            labelWelna.Text = o1.wool.quantity.ToString();
 
-            o2.ZmianaKoloruTekstuLabela(o1.skora, labelSkora);
-            o2.ZmianaKoloruTekstuLabela(o1.rudaZelaza, labelRudaZelaza);
-            o2.ZmianaKoloruTekstuLabela(o1.zelazo, labelZelazo);
-            o2.ZmianaKoloruTekstuLabela(o1.rudaObsydianu, labelRudaObsydianu);
-            o2.ZmianaKoloruTekstuLabela(o1.obsydian, labelObsydian);
-            o2.ZmianaKoloruTekstuLabela(o1.kawalekDrewna, labelKawalekDrewna);
-            o2.ZmianaKoloruTekstuLabela(o1.skorzanyPasek, labelSkorzanyPasek);
-            o2.ZmianaKoloruTekstuLabela(o1.welna, labelWelna);
+            o2.ZmianaKoloruTekstuLabela(o1.skin, labelSkora);
+            o2.ZmianaKoloruTekstuLabela(o1.ironOre, labelRudaZelaza);
+            o2.ZmianaKoloruTekstuLabela(o1.iron, labelZelazo);
+            o2.ZmianaKoloruTekstuLabela(o1.obsidianOre, labelRudaObsydianu);
+            o2.ZmianaKoloruTekstuLabela(o1.obsidian, labelObsydian);
+            o2.ZmianaKoloruTekstuLabela(o1.pieceOfWood, labelKawalekDrewna);
+            o2.ZmianaKoloruTekstuLabela(o1.leatherBelt, labelSkorzanyPasek);
+            o2.ZmianaKoloruTekstuLabela(o1.wool, labelWelna);
 
         }
 

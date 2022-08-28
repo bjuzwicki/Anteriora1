@@ -13,7 +13,6 @@ namespace Anteriora
     public partial class Zarzadzanie : Form
     {
         Osada o1;
-        Poczatek o2;
 
         List<Label> podatki = new List<Label>();
         List<Label> drewno = new List<Label>();
@@ -26,10 +25,9 @@ namespace Anteriora
         List<Label> rudaZelaza = new List<Label>();
         List<Label> rudaObsydianu = new List<Label>();
 
-        public Zarzadzanie(Osada c1, Poczatek c2)
+        public Zarzadzanie(Osada c1)
         {
             o1 = c1;
-            o2 = c2;
             InitializeComponent();
 
             #region Dodanie elementów do list
@@ -51,23 +49,23 @@ namespace Anteriora
 
             SprawdzPoziomPodatkow(podatki);
 
-            SprawdzPoziomEksploatacji(o2.drewno, drewno);
+            SprawdzPoziomEksploatacji(o1.wood, drewno);
 
-            SprawdzPoziomEksploatacji(o2.kamień, kamien);
+            SprawdzPoziomEksploatacji(o1.stone, kamien);
 
-            SprawdzPoziomEksploatacji(o2.siano, siano);
+            SprawdzPoziomEksploatacji(o1.hay, siano);
 
-            SprawdzPoziomEksploatacji(o2.jedzenie, jedzenie);
+            SprawdzPoziomEksploatacji(o1.food, jedzenie);
 
-            SprawdzPoziomEksploatacji(o2.skora, skora);
+            SprawdzPoziomEksploatacji(o1.skin, skora);
 
-            SprawdzPoziomEksploatacji(o2.welna, welna);
+            SprawdzPoziomEksploatacji(o1.wool, welna);
 
-            SprawdzPoziomEksploatacji(o2.woda, woda);
+            SprawdzPoziomEksploatacji(o1.water, woda);
 
-            SprawdzPoziomEksploatacji(o2.rudaZelaza, rudaZelaza);
+            SprawdzPoziomEksploatacji(o1.ironOre, rudaZelaza);
 
-            SprawdzPoziomEksploatacji(o2.rudaObsydianu, rudaObsydianu);
+            SprawdzPoziomEksploatacji(o1.obsidianOre, rudaObsydianu);
 
             
 
@@ -127,35 +125,35 @@ namespace Anteriora
 
         private void LabelDrewnoPoziom0_Click(object sender, EventArgs e)
         {
-            UstawPoziomEksploatacji(o2.drewno, labelDrewnoPoziom0, 0, drewno);
+            UstawPoziomEksploatacji(o1.wood, labelDrewnoPoziom0, 0, drewno);
         }
 
         private void labelDrewnoPoziom1_Click(object sender, EventArgs e)
         {
-            UstawPoziomEksploatacji(o2.drewno, labelDrewnoPoziom1, 1, drewno);
+            UstawPoziomEksploatacji(o1.wood, labelDrewnoPoziom1, 1, drewno);
         }
 
         private void labelDrewnoPoziom2_Click(object sender, EventArgs e)
         {
-            UstawPoziomEksploatacji(o2.drewno, labelDrewnoPoziom2, 2, drewno);
+            UstawPoziomEksploatacji(o1.wood, labelDrewnoPoziom2, 2, drewno);
 
         }
 
         private void labelDrewnoPoziom3_Click(object sender, EventArgs e)
         {
-            UstawPoziomEksploatacji(o2.drewno, labelDrewnoPoziom3, 3, drewno);
+            UstawPoziomEksploatacji(o1.wood, labelDrewnoPoziom3, 3, drewno);
 
         }
 
         private void labelDrewnoPoziom4_Click(object sender, EventArgs e)
         {
-            UstawPoziomEksploatacji(o2.drewno, labelDrewnoPoziom4, 4, drewno);
+            UstawPoziomEksploatacji(o1.wood, labelDrewnoPoziom4, 4, drewno);
 
         }
 
         private void labelDrewnoPoziom5_Click(object sender, EventArgs e)
         {
-            UstawPoziomEksploatacji(o2.drewno, labelDrewnoPoziom5, 5, drewno);
+            UstawPoziomEksploatacji(o1.wood, labelDrewnoPoziom5, 5, drewno);
 
         }
 
@@ -165,32 +163,32 @@ namespace Anteriora
 
         private void LabelKamienPoziom0_Click(object sender, EventArgs e)
         {
-            UstawPoziomEksploatacji(o2.kamień, labelKamienPoziom0, 0, kamien);
+            UstawPoziomEksploatacji(o1.stone, labelKamienPoziom0, 0, kamien);
         }
 
         private void labelKamienPoziom1_Click(object sender, EventArgs e)
         {
-            UstawPoziomEksploatacji(o2.kamień, labelKamienPoziom1, 1, kamien);
+            UstawPoziomEksploatacji(o1.stone, labelKamienPoziom1, 1, kamien);
         }
 
         private void labelKamienPoziom2_Click(object sender, EventArgs e)
         {
-            UstawPoziomEksploatacji(o2.kamień, labelKamienPoziom2, 2, kamien);
+            UstawPoziomEksploatacji(o1.stone, labelKamienPoziom2, 2, kamien);
         }
 
         private void labelKamienPoziom3_Click(object sender, EventArgs e)
         {
-            UstawPoziomEksploatacji(o2.kamień, labelKamienPoziom3, 3, kamien);
+            UstawPoziomEksploatacji(o1.stone, labelKamienPoziom3, 3, kamien);
         }
 
         private void labelKamienPoziom4_Click(object sender, EventArgs e)
         {
-            UstawPoziomEksploatacji(o2.kamień, labelKamienPoziom4, 4, kamien);
+            UstawPoziomEksploatacji(o1.stone, labelKamienPoziom4, 4, kamien);
         }
 
         private void labelKamienPoziom5_Click(object sender, EventArgs e)
         {
-            UstawPoziomEksploatacji(o2.kamień, labelKamienPoziom5, 5, kamien);
+            UstawPoziomEksploatacji(o1.stone, labelKamienPoziom5, 5, kamien);
         }
 
         #endregion Kamien
@@ -199,32 +197,32 @@ namespace Anteriora
 
         private void LabelSianoPoziom0_Click(object sender, EventArgs e)
         {
-            UstawPoziomEksploatacji(o2.siano, labelSianoPoziom0, 0, siano);
+            UstawPoziomEksploatacji(o1.hay, labelSianoPoziom0, 0, siano);
         }
 
         private void labelSianoPoziom1_Click(object sender, EventArgs e)
         {
-            UstawPoziomEksploatacji(o2.siano, labelSianoPoziom1, 1, siano);
+            UstawPoziomEksploatacji(o1.hay, labelSianoPoziom1, 1, siano);
         }
 
         private void labelSianoPoziom2_Click(object sender, EventArgs e)
         {
-            UstawPoziomEksploatacji(o2.siano, labelSianoPoziom2, 2, siano);
+            UstawPoziomEksploatacji(o1.hay, labelSianoPoziom2, 2, siano);
         }
 
         private void labelSianoPoziom3_Click(object sender, EventArgs e)
         {
-            UstawPoziomEksploatacji(o2.siano, labelSianoPoziom3, 3, siano);
+            UstawPoziomEksploatacji(o1.hay, labelSianoPoziom3, 3, siano);
         }
 
         private void labelSianoPoziom4_Click(object sender, EventArgs e)
         {
-            UstawPoziomEksploatacji(o2.siano, labelSianoPoziom4, 4, siano);
+            UstawPoziomEksploatacji(o1.hay, labelSianoPoziom4, 4, siano);
         }
 
         private void labelSianoPoziom5_Click(object sender, EventArgs e)
         {
-            UstawPoziomEksploatacji(o2.siano, labelSianoPoziom5, 5, siano);
+            UstawPoziomEksploatacji(o1.hay, labelSianoPoziom5, 5, siano);
         }
 
         #endregion Siano
@@ -233,32 +231,32 @@ namespace Anteriora
 
         private void LabelJedzeniePoziom0_Click(object sender, EventArgs e)
         {
-            UstawPoziomEksploatacji(o2.jedzenie, labelJedzeniePoziom0, 0, jedzenie);
+            UstawPoziomEksploatacji(o1.food, labelJedzeniePoziom0, 0, jedzenie);
         }
 
         private void labelJedzeniePoziom1_Click(object sender, EventArgs e)
         {
-            UstawPoziomEksploatacji(o2.jedzenie, labelJedzeniePoziom1, 1, jedzenie);
+            UstawPoziomEksploatacji(o1.food, labelJedzeniePoziom1, 1, jedzenie);
         }
 
         private void labelJedzeniePoziom2_Click(object sender, EventArgs e)
         {
-            UstawPoziomEksploatacji(o2.jedzenie, labelJedzeniePoziom2, 2, jedzenie);
+            UstawPoziomEksploatacji(o1.food, labelJedzeniePoziom2, 2, jedzenie);
         }
 
         private void labelJedzeniePoziom3_Click(object sender, EventArgs e)
         {
-            UstawPoziomEksploatacji(o2.jedzenie, labelJedzeniePoziom3, 3, jedzenie);
+            UstawPoziomEksploatacji(o1.food, labelJedzeniePoziom3, 3, jedzenie);
         }
 
         private void labelJedzeniePoziom4_Click(object sender, EventArgs e)
         {
-            UstawPoziomEksploatacji(o2.jedzenie, labelJedzeniePoziom4, 4, jedzenie);
+            UstawPoziomEksploatacji(o1.food, labelJedzeniePoziom4, 4, jedzenie);
         }
 
         private void labelJedzeniePoziom5_Click(object sender, EventArgs e)
         {
-            UstawPoziomEksploatacji(o2.jedzenie, labelJedzeniePoziom5, 5, jedzenie);
+            UstawPoziomEksploatacji(o1.food, labelJedzeniePoziom5, 5, jedzenie);
         }
 
 
@@ -268,32 +266,32 @@ namespace Anteriora
 
         private void LabelSkoraPoziom0_Click(object sender, EventArgs e)
         {
-            UstawPoziomEksploatacji(o2.skora, labelSkoraPoziom0, 0, skora);
+            UstawPoziomEksploatacji(o1.skin, labelSkoraPoziom0, 0, skora);
         }
 
         private void labelSkoraPoziom1_Click(object sender, EventArgs e)
         {
-            UstawPoziomEksploatacji(o2.skora, labelSkoraPoziom1, 1, skora);
+            UstawPoziomEksploatacji(o1.skin, labelSkoraPoziom1, 1, skora);
         }
 
         private void labelSkoraPoziom2_Click(object sender, EventArgs e)
         {
-            UstawPoziomEksploatacji(o2.skora, labelSkoraPoziom2, 2, skora);
+            UstawPoziomEksploatacji(o1.skin, labelSkoraPoziom2, 2, skora);
         }
 
         private void labelSkoraPoziom3_Click(object sender, EventArgs e)
         {
-            UstawPoziomEksploatacji(o2.skora, labelSkoraPoziom3, 3, skora);
+            UstawPoziomEksploatacji(o1.skin, labelSkoraPoziom3, 3, skora);
         }
 
         private void labelSkoraPoziom4_Click(object sender, EventArgs e)
         {
-            UstawPoziomEksploatacji(o2.skora, labelSkoraPoziom4, 4, skora);
+            UstawPoziomEksploatacji(o1.skin, labelSkoraPoziom4, 4, skora);
         }
 
         private void labelSkoraPoziom5_Click(object sender, EventArgs e)
         {
-            UstawPoziomEksploatacji(o2.skora, labelSkoraPoziom5, 5, skora);
+            UstawPoziomEksploatacji(o1.skin, labelSkoraPoziom5, 5, skora);
         }
 
         #endregion Skora
@@ -302,32 +300,32 @@ namespace Anteriora
 
         private void LabelWelnaPoziom0_Click(object sender, EventArgs e)
         {
-            UstawPoziomEksploatacji(o2.welna, labelWelnaPoziom0, 0, welna);
+            UstawPoziomEksploatacji(o1.wool, labelWelnaPoziom0, 0, welna);
         }
 
         private void LabelWelnaPoziom1_Click(object sender, EventArgs e)
         {
-            UstawPoziomEksploatacji(o2.welna, labelWelnaPoziom1, 1, welna);
+            UstawPoziomEksploatacji(o1.wool, labelWelnaPoziom1, 1, welna);
         }
 
         private void LabelWelnaPoziom2_Click(object sender, EventArgs e)
         {
-            UstawPoziomEksploatacji(o2.welna, labelWelnaPoziom2, 2, welna);
+            UstawPoziomEksploatacji(o1.wool, labelWelnaPoziom2, 2, welna);
         }
 
         private void LabelWelnaPoziom3_Click(object sender, EventArgs e)
         {
-            UstawPoziomEksploatacji(o2.welna, labelWelnaPoziom3, 3, welna);
+            UstawPoziomEksploatacji(o1.wool, labelWelnaPoziom3, 3, welna);
         }
 
         private void LabelWelnaPoziom4_Click(object sender, EventArgs e)
         {
-            UstawPoziomEksploatacji(o2.welna, labelWelnaPoziom4, 4, welna);
+            UstawPoziomEksploatacji(o1.wool, labelWelnaPoziom4, 4, welna);
         }
 
         private void LabelWelnaPoziom5_Click(object sender, EventArgs e)
         {
-            UstawPoziomEksploatacji(o2.welna, labelWelnaPoziom5, 5, welna);
+            UstawPoziomEksploatacji(o1.wool, labelWelnaPoziom5, 5, welna);
         }
 
         #endregion Welna
@@ -336,32 +334,32 @@ namespace Anteriora
 
         private void LabelWodaPoziom0_Click(object sender, EventArgs e)
         {
-            UstawPoziomEksploatacji(o2.woda, labelWodaPoziom0, 0, woda);
+            UstawPoziomEksploatacji(o1.water, labelWodaPoziom0, 0, woda);
         }
 
         private void labelWodaPoziom1_Click(object sender, EventArgs e)
         {
-            UstawPoziomEksploatacji(o2.woda, labelWodaPoziom1, 1, woda);
+            UstawPoziomEksploatacji(o1.water, labelWodaPoziom1, 1, woda);
         }
 
         private void labelWodaPoziom2_Click(object sender, EventArgs e)
         {
-            UstawPoziomEksploatacji(o2.woda, labelWodaPoziom2, 2, woda);
+            UstawPoziomEksploatacji(o1.water, labelWodaPoziom2, 2, woda);
         }
 
         private void labelWodaPoziom3_Click(object sender, EventArgs e)
         {
-            UstawPoziomEksploatacji(o2.woda, labelWodaPoziom3, 3, woda);
+            UstawPoziomEksploatacji(o1.water, labelWodaPoziom3, 3, woda);
         }
 
         private void labelWodaPoziom4_Click(object sender, EventArgs e)
         {
-            UstawPoziomEksploatacji(o2.woda, labelWodaPoziom4, 4, woda);
+            UstawPoziomEksploatacji(o1.water, labelWodaPoziom4, 4, woda);
         }
 
         private void labelWodaPoziom5_Click(object sender, EventArgs e)
         {
-            UstawPoziomEksploatacji(o2.woda, labelWodaPoziom5, 5, woda);
+            UstawPoziomEksploatacji(o1.water, labelWodaPoziom5, 5, woda);
         }
 
         #endregion Woda
@@ -370,32 +368,32 @@ namespace Anteriora
 
         private void LabelRudaZelazaPoziom0_Click(object sender, EventArgs e)
         {
-            UstawPoziomEksploatacji(o2.rudaZelaza, labelRudaZelazaPoziom0, 0, rudaZelaza);
+            UstawPoziomEksploatacji(o1.ironOre, labelRudaZelazaPoziom0, 0, rudaZelaza);
         }
 
         private void LabelRudaZelazaPoziom1_Click(object sender, EventArgs e)
         {
-            UstawPoziomEksploatacji(o2.rudaZelaza, labelRudaZelazaPoziom1, 1, rudaZelaza);
+            UstawPoziomEksploatacji(o1.ironOre, labelRudaZelazaPoziom1, 1, rudaZelaza);
         }
 
         private void LabelRudaZelazaPoziom2_Click(object sender, EventArgs e)
         {
-            UstawPoziomEksploatacji(o2.rudaZelaza, labelRudaZelazaPoziom2, 2, rudaZelaza);
+            UstawPoziomEksploatacji(o1.ironOre, labelRudaZelazaPoziom2, 2, rudaZelaza);
         }
 
         private void LabelRudaZelazaPoziom3_Click(object sender, EventArgs e)
         {
-            UstawPoziomEksploatacji(o2.rudaZelaza, labelRudaZelazaPoziom3, 3, rudaZelaza);
+            UstawPoziomEksploatacji(o1.ironOre, labelRudaZelazaPoziom3, 3, rudaZelaza);
         }
 
         private void LabelRudaZelazaPoziom4_Click(object sender, EventArgs e)
         {
-            UstawPoziomEksploatacji(o2.rudaZelaza, labelRudaZelazaPoziom4, 4, rudaZelaza);
+            UstawPoziomEksploatacji(o1.ironOre, labelRudaZelazaPoziom4, 4, rudaZelaza);
         }
 
         private void LabelRudaZelazaPoziom5_Click(object sender, EventArgs e)
         {
-            UstawPoziomEksploatacji(o2.rudaZelaza, labelRudaZelazaPoziom5, 5, rudaZelaza);
+            UstawPoziomEksploatacji(o1.ironOre, labelRudaZelazaPoziom5, 5, rudaZelaza);
         }
 
         #endregion Ruda zelaza
@@ -404,32 +402,32 @@ namespace Anteriora
 
         private void LabelRudaObsydianuPoziom0_Click(object sender, EventArgs e)
         {
-            UstawPoziomEksploatacji(o2.rudaObsydianu, labelRudaObsydianuPoziom0, 0, rudaObsydianu);
+            UstawPoziomEksploatacji(o1.obsidianOre, labelRudaObsydianuPoziom0, 0, rudaObsydianu);
         }
 
         private void LabelRudaObsydianuPoziom1_Click(object sender, EventArgs e)
         {
-            UstawPoziomEksploatacji(o2.rudaObsydianu, labelRudaObsydianuPoziom1, 1, rudaObsydianu);
+            UstawPoziomEksploatacji(o1.obsidianOre, labelRudaObsydianuPoziom1, 1, rudaObsydianu);
         }
 
         private void LabelRudaObsydianuPoziom2_Click(object sender, EventArgs e)
         {
-            UstawPoziomEksploatacji(o2.rudaObsydianu, labelRudaObsydianuPoziom2, 2, rudaObsydianu);
+            UstawPoziomEksploatacji(o1.obsidianOre, labelRudaObsydianuPoziom2, 2, rudaObsydianu);
         }
 
         private void LabelRudaObsydianuPoziom3_Click(object sender, EventArgs e)
         {
-            UstawPoziomEksploatacji(o2.rudaObsydianu, labelRudaObsydianuPoziom3, 3, rudaObsydianu);
+            UstawPoziomEksploatacji(o1.obsidianOre, labelRudaObsydianuPoziom3, 3, rudaObsydianu);
         }
 
         private void LabelRudaObsydianuPoziom4_Click(object sender, EventArgs e)
         {
-            UstawPoziomEksploatacji(o2.rudaObsydianu, labelRudaObsydianuPoziom4, 4, rudaObsydianu);
+            UstawPoziomEksploatacji(o1.obsidianOre, labelRudaObsydianuPoziom4, 4, rudaObsydianu);
         }
 
         private void LabelRudaObsydianuPoziom5_Click(object sender, EventArgs e)
         {
-            UstawPoziomEksploatacji(o2.rudaObsydianu, labelRudaObsydianuPoziom5, 5, rudaObsydianu);
+            UstawPoziomEksploatacji(o1.obsidianOre, labelRudaObsydianuPoziom5, 5, rudaObsydianu);
         }
 
         #endregion Ruda obsydianu
@@ -446,12 +444,12 @@ namespace Anteriora
             }
 
             label.BackColor = Color.Red;
-            o2.mieszkancy.poziomPodatkow = poziomPodatkow;
+            o1.mieszkancy.poziomPodatkow = poziomPodatkow;
         }
 
         public void UstawPoziomEksploatacji(Materialy material,Label label, int poziomEksploatacji, List<Label> list)
         {
-            if (o2.mieszkancy.ObliczLiczbeBezrobotnychMieszkancow() >= (material.poziomUlepszenia * poziomEksploatacji) - (material.poziomUlepszenia*material.poziomEksploatacji))
+            if (o1.mieszkancy.ObliczLiczbeBezrobotnychMieszkancow() >= (material.improvementLevel * poziomEksploatacji) - (material.improvementLevel*material.exploitationLevel))
             {
                 foreach (var item in list)
                 {
@@ -460,13 +458,13 @@ namespace Anteriora
 
                 label.BackColor = Color.Red;
 
-                int poziomEksploatacjiAktualnie = material.poziomEksploatacji;
+                int poziomEksploatacjiAktualnie = material.exploitationLevel;
 
-                o2.mieszkancy.liczbaPracujacychMieszkancow -= poziomEksploatacjiAktualnie * material.poziomUlepszenia;
+                o1.mieszkancy.liczbaPracujacychMieszkancow -= poziomEksploatacjiAktualnie * material.improvementLevel;
 
-                material.poziomEksploatacji = poziomEksploatacji;
+                material.exploitationLevel = poziomEksploatacji;
 
-                o2.mieszkancy.liczbaPracujacychMieszkancow += poziomEksploatacji * material.poziomUlepszenia;
+                o1.mieszkancy.liczbaPracujacychMieszkancow += poziomEksploatacji * material.improvementLevel;
             }
             else
             {
@@ -477,7 +475,7 @@ namespace Anteriora
 
         public void SprawdzPoziomPodatkow(List<Label> list)
         {
-            switch (o2.mieszkancy.poziomPodatkow)
+            switch (o1.mieszkancy.poziomPodatkow)
             {
                 case 0:
                     list[0].BackColor = Color.Red;
@@ -502,7 +500,7 @@ namespace Anteriora
 
         public void SprawdzPoziomEksploatacji(Materialy materiał, List<Label> list)
         {
-            switch (materiał.poziomEksploatacji)
+            switch (materiał.exploitationLevel)
             {
                 case 0:
                     list[0].BackColor = Color.Red;
@@ -631,9 +629,9 @@ namespace Anteriora
 
         public void OdblokujPoziomPodatkow()
         {
-            o2.mieszkancy.poziomPodatkow = o2.mieszkancy.poziomZadowolenia;
+            o1.mieszkancy.poziomPodatkow = o1.mieszkancy.poziomZadowolenia;
 
-            switch(o2.mieszkancy.poziomPodatkow)
+            switch(o1.mieszkancy.poziomPodatkow)
             {
                 case 0:
                     podatki[0].Enabled = true;

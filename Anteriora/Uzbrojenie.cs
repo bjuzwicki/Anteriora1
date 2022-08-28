@@ -9,10 +9,10 @@ namespace Anteriora
 {
     public class Uzbrojenie : Wyposazenie
     {
-        public Uzbrojenie(string nazwa, int iloscPotrzebnejSkory, int iloscPotrzebnegoZelaza, int iloscPotrzebnegoObsydianu, string kod1, Bitmap obrazek)
+        public Uzbrojenie(string nazwa, int iloscPotrzebnejSkory, int iloscPotrzebnegoZelaza, int iloscPotrzebnegoObsydianu, string kod1, Bitmap obrazek, int ilosc = 0)
         {
             this.nazwa = nazwa;
-            ilosc = 0;
+            this.ilosc = ilosc;
             this.iloscPotrzebnejSkory = iloscPotrzebnejSkory;
             this.iloscPotrzebnegoZelaza = iloscPotrzebnegoZelaza;
             this.iloscPotrzebnegoObsydianu = iloscPotrzebnegoObsydianu;
@@ -20,10 +20,10 @@ namespace Anteriora
             this.obrazek = obrazek;
         }
         
-        public Uzbrojenie(string nazwa, int iloscPotrzebnejSkory, int iloscPotrzebnegoZelaza, int iloscPotrzebnegoObsydianu, string kod1, string kod2, Bitmap obrazek)
+        public Uzbrojenie(string nazwa, int iloscPotrzebnejSkory, int iloscPotrzebnegoZelaza, int iloscPotrzebnegoObsydianu, string kod1, string kod2, Bitmap obrazek, int ilosc = 0)
         {
             this.nazwa = nazwa;
-            ilosc = 0;
+            this.ilosc = ilosc;
             this.iloscPotrzebnejSkory = iloscPotrzebnejSkory;
             this.iloscPotrzebnegoZelaza = iloscPotrzebnegoZelaza;
             this.iloscPotrzebnegoObsydianu = iloscPotrzebnegoObsydianu;
@@ -33,10 +33,10 @@ namespace Anteriora
         }
 
         //tarcza
-        public Uzbrojenie(string nazwa, string kod1, Bitmap obrazek)
+        public Uzbrojenie(string nazwa, string kod1, Bitmap obrazek, int ilosc = 0)
         {
             this.nazwa = nazwa;
-            ilosc = 0;
+            this.ilosc = ilosc;
             iloscPotrzebnegoDrewna = 4;
             iloscPotrzebnegoZelaza = 5;
             iloscPotrzebnegoObsydianu = 5;

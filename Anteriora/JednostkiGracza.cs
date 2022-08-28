@@ -14,10 +14,10 @@ namespace Anteriora
         //readonly Poczatek o;
 
         public JednostkiGracza(string nazwa, int atakDomyslny, int obronaDomyslna, int PZDomyslne, int ilosc, int odlegloscAtaku, bool czyAtakNaBliskiDystans,
-                                Bitmap obrazekPrawo, Bitmap obrazekLewo, Bitmap obrazekGora, Bitmap obrazekDol)
+                                Bitmap obrazekPrawo, Bitmap obrazekLewo, Bitmap obrazekGora, Bitmap obrazekDol, int poziomUlepszenia = 1)
         {
             this.nazwa = nazwa;
-            this.poziomUlepszenia = 1;
+            this.poziomUlepszenia = poziomUlepszenia;
             this.atakDomyslny = atakDomyslny; 
             this.obronaDomyslna = obronaDomyslna;
             this.PZDomyslne = PZDomyslne;
@@ -31,10 +31,10 @@ namespace Anteriora
         }
 
         //zwiadowca
-        public JednostkiGracza()
+        public JednostkiGracza(int poziomUlepszenia = 1)
         {
             this.atakDomyslny = 30;
-            this.poziomUlepszenia = 1;
+            this.poziomUlepszenia = poziomUlepszenia;
         }
 
         //public int ObliczLiczebnoscWojsk()

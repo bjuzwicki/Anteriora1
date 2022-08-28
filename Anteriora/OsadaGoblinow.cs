@@ -13,8 +13,7 @@ namespace Anteriora
     public partial class OsadaGoblinow : Form
     {
         Osada o1;
-        Poczatek o2;
-        Mapa o3;
+        Mapa o2;
 
         Bitmap miecz = Properties.Resources.miecze2;
 
@@ -22,11 +21,10 @@ namespace Anteriora
 
         List<PictureBox> listaPictureBoxMgla = new List<PictureBox>();
 
-        public OsadaGoblinow(Osada c1, Poczatek c2, Mapa c3)
+        public OsadaGoblinow(Osada c1, Mapa c2)
         {
             o1 = c1;
             o2 = c2;
-            o3 = c3;
             InitializeComponent();            
 
             o1.kopalniaKamienia.pictureBox = pictureBoxKopalniaKamienia;
@@ -56,7 +54,7 @@ namespace Anteriora
 
         private void buttonPowrot_Click(object sender, EventArgs e)
         {
-            o3.Visible = true;
+            o2.Visible = true;
             this.Close();
         }
 
@@ -64,7 +62,7 @@ namespace Anteriora
         {
             o1.osadaGoblinow1.ZdefiniujPrzeciwnikówNaObszarze(o1.nietoperzMaly, 10, o1.nietoperzDuzy, 5, o1.robak, 5, o1.brak, 0, o1.brak, 0, o1.brak, 0, o1.brak, 0);
             o1.osadaGoblinow1.czyBitwa = true;
-            new PoleBitwy(o2,o1.osadaGoblinow, o1.osadaGoblinow1,Properties.Resources.osadagoblinowmapka1).Show();            
+            new PoleBitwy(o1,o1.osadaGoblinow, o1.osadaGoblinow1,Properties.Resources.osadagoblinowmapka1).Show();            
         }
 
         private void PictureBoxMglaPoziom1_MouseMove(object sender, MouseEventArgs e)
@@ -83,7 +81,7 @@ namespace Anteriora
             {
                 o1.osadaGoblinow2.ZdefiniujPrzeciwnikówNaObszarze(o1.goblin, 3, o1.goblin2, 3, o1.brak, 0, o1.brak, 0, o1.brak, 0, o1.brak, 0, o1.brak, 0);
                 o1.osadaGoblinow2.czyBitwa = true;
-                new PoleBitwy(o2, o1.osadaGoblinow, o1.osadaGoblinow2, Properties.Resources.pasekzyciatlo).Show();
+                new PoleBitwy(o1, o1.osadaGoblinow, o1.osadaGoblinow2, Properties.Resources.pasekzyciatlo).Show();
             }
         }
 
@@ -106,7 +104,7 @@ namespace Anteriora
             {
                 o1.osadaGoblinow3.ZdefiniujPrzeciwnikówNaObszarze(o1.goblin, 5, o1.goblin2, 5, o1.goblin3, 5, o1.brak, 0, o1.brak, 0, o1.brak, 0, o1.brak, 0);
                 o1.osadaGoblinow3.czyBitwa = true;
-                new PoleBitwy(o2, o1.osadaGoblinow, o1.osadaGoblinow3, Properties.Resources.pasekzyciatlo).Show();
+                new PoleBitwy(o1, o1.osadaGoblinow, o1.osadaGoblinow3, Properties.Resources.pasekzyciatlo).Show();
             }
         }
 
@@ -129,7 +127,7 @@ namespace Anteriora
             {
                 o1.osadaGoblinow4.ZdefiniujPrzeciwnikówNaObszarze(o1.goblin, 10, o1.goblin2, 10, o1.goblin3, 10, o1.goblin4, 5, o1.goblin5, 5, o1.brak, 0, o1.brak, 0);
                 o1.osadaGoblinow4.czyBitwa = true;
-                new PoleBitwy(o2, o1.osadaGoblinow, o1.osadaGoblinow4, Properties.Resources.pasekzyciatlo).Show();
+                new PoleBitwy(o1, o1.osadaGoblinow, o1.osadaGoblinow4, Properties.Resources.pasekzyciatlo).Show();
             }
         }
 
@@ -152,7 +150,7 @@ namespace Anteriora
             {
                 o1.osadaGoblinow5.ZdefiniujPrzeciwnikówNaObszarze(o1.goblin, 10, o1.goblin2, 10, o1.goblin3, 10, o1.goblin4, 5, o1.goblin5, 5, o1.brak, 0, o1.brak, 0);
                 o1.osadaGoblinow5.czyBitwa = true;
-                new PoleBitwy(o2, o1.osadaGoblinow, o1.osadaGoblinow5, Properties.Resources.pasekzyciatlo).Show();
+                new PoleBitwy(o1, o1.osadaGoblinow, o1.osadaGoblinow5, Properties.Resources.pasekzyciatlo).Show();
             }
         }
 
@@ -175,7 +173,7 @@ namespace Anteriora
             {
                 o1.osadaGoblinow6.ZdefiniujPrzeciwnikówNaObszarze(o1.goblin, 10, o1.goblin2, 10, o1.goblin3, 10, o1.goblin4, 5, o1.goblin5, 5, o1.brak, 0, o1.brak, 0);
                 o1.osadaGoblinow6.czyBitwa = true;
-                new PoleBitwy(o2, o1.osadaGoblinow, o1.osadaGoblinow6, Properties.Resources.pasekzyciatlo).Show();
+                new PoleBitwy(o1, o1.osadaGoblinow, o1.osadaGoblinow6, Properties.Resources.pasekzyciatlo).Show();
             }
         }
 
@@ -198,7 +196,7 @@ namespace Anteriora
             {
                 o1.osadaGoblinow7.ZdefiniujPrzeciwnikówNaObszarze(o1.goblin, 20, o1.goblin2, 30, o1.goblin3, 20, o1.goblin4, 20, o1.goblin5,20, o1.goblin6, 10, o1.goblin7, 10);
                 o1.osadaGoblinow7.czyBitwa = true;
-                new PoleBitwy(o2, o1.osadaGoblinow, o1.osadaGoblinow7, Properties.Resources.pasekzyciatlo).Show();
+                new PoleBitwy(o1, o1.osadaGoblinow, o1.osadaGoblinow7, Properties.Resources.pasekzyciatlo).Show();
             }
         }
 
@@ -221,7 +219,7 @@ namespace Anteriora
             {
                 o1.osadaGoblinow8.ZdefiniujPrzeciwnikówNaObszarze(o1.goblin, 30, o1.ork, 1, o1.goblin3, 30, o1.goblin4, 20, o1.goblin5, 20, o1.goblin6, 20, o1.goblin7, 20);
                 o1.osadaGoblinow8.czyBitwa = true;
-                new PoleBitwy(o2, o1.osadaGoblinow, o1.osadaGoblinow8, Properties.Resources.pasekzyciatlo).Show();
+                new PoleBitwy(o1, o1.osadaGoblinow, o1.osadaGoblinow8, Properties.Resources.pasekzyciatlo).Show();
             }
         }
 
@@ -476,7 +474,7 @@ namespace Anteriora
                     DialogResult dialogResult = MessageBox.Show("Czy chcesz ulepszyć kopalnie kamienia do poziomu " + (o1.kopalniaKamienia.poziomUlepszenia + 1) + "?" + " Koszt: " + iloscSurowcow +" drewna.", "", MessageBoxButtons.YesNo);
                     if (dialogResult == DialogResult.Yes)
                     {
-                        o1.UlepszanieBudynkuInstancja1(o2.drewno, iloscSurowcow, o2.siano, 0, o1.kopalniaKamienia);
+                        o1.UlepszanieBudynkuInstancja1(o1.wood, iloscSurowcow, o1.hay, 0, o1.kopalniaKamienia);
                     }
                 }
                 else
@@ -490,7 +488,7 @@ namespace Anteriora
                 DialogResult dialogResult = MessageBox.Show("Czy chcesz wybudować kopalnie kamienia? Koszt: 300 drewna.", "", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    o1.KosztBudowyInstancje(o2.drewno, 300, o2.siano, 0, o1.kopalniaKamienia);
+                    o1.KosztBudowyInstancje(o1.wood, 300, o1.hay, 0, o1.kopalniaKamienia);
                 }
             }
         }
@@ -506,7 +504,7 @@ namespace Anteriora
                     DialogResult dialogResult = MessageBox.Show("Czy chcesz ulepszyć kopalnie rudy żelaza do poziomu " + (o1.kopalniaRudyZelaza1.poziomUlepszenia + 1) + "?" + " Koszt: " + iloscSurowcow + " drewna.", "", MessageBoxButtons.YesNo);
                     if (dialogResult == DialogResult.Yes)
                     {
-                        o1.UlepszanieBudynkuInstancja1(o2.drewno, iloscSurowcow, o2.siano, 0, o1.kopalniaRudyZelaza1);
+                        o1.UlepszanieBudynkuInstancja1(o1.wood, iloscSurowcow, o1.hay, 0, o1.kopalniaRudyZelaza1);
                     }
                 }
                 else
@@ -520,7 +518,7 @@ namespace Anteriora
                 DialogResult dialogResult = MessageBox.Show("Czy chcesz wybudować kopalnie rudy żelaza? Koszt: 300 drewna.", "", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    o1.KosztBudowyInstancje(o2.drewno, 300, o2.siano, 0, o1.kopalniaRudyZelaza1);
+                    o1.KosztBudowyInstancje(o1.wood, 300, o1.hay, 0, o1.kopalniaRudyZelaza1);
                 }
             }
         }
@@ -536,7 +534,7 @@ namespace Anteriora
                     DialogResult dialogResult = MessageBox.Show("Czy chcesz ulepszyć kopalnie rudy żelaza do poziomu " + (o1.kopalniaRudyZelaza2.poziomUlepszenia + 1) + "?" + " Koszt: " + iloscSurowcow + " drewna.", "", MessageBoxButtons.YesNo);
                     if (dialogResult == DialogResult.Yes)
                     {
-                        o1.UlepszanieBudynkuInstancja1(o2.drewno, iloscSurowcow, o2.siano, 0, o1.kopalniaRudyZelaza2);
+                        o1.UlepszanieBudynkuInstancja1(o1.wood, iloscSurowcow, o1.hay, 0, o1.kopalniaRudyZelaza2);
                     }
                 }
                 else
@@ -550,7 +548,7 @@ namespace Anteriora
                 DialogResult dialogResult = MessageBox.Show("Czy chcesz wybudować kopalnie rudy żelaza? Koszt: 300 drewna.", "", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    o1.KosztBudowyInstancje(o2.drewno, 300, o2.siano, 0, o1.kopalniaRudyZelaza2);
+                    o1.KosztBudowyInstancje(o1.wood, 300, o1.hay, 0, o1.kopalniaRudyZelaza2);
                 }
             }
         }

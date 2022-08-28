@@ -16,7 +16,7 @@ namespace Anteriora
         // dla wszystkich jednostek
         public int potencjalObronyOgolnie { get; set; }
 
-        public int ObliczPotencjalObrony(int ilosc, int obrona, int poziomUlepszenia)
+        public int ObliczPotencjalObrony(int ilosc, int obrona, int poziomUlepszenia = 1)
         {
             potencjalObrony = ilosc * obrona * poziomUlepszenia;
             return potencjalObrony;

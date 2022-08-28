@@ -9,10 +9,10 @@ namespace Anteriora
 {
     public class Bronie : Wyposazenie
     {
-        public Bronie(string nazwa, int iloscPotrzebnychKawalkowDrewna, int iloscPotrzebnegoKamienia, int iloscPotrzebnegoZelaza, int iloscPotrzebnegoObsydianu, string kod1, string kod2, string kod3, Bitmap obrazek)
+        public Bronie(string nazwa, int iloscPotrzebnychKawalkowDrewna, int iloscPotrzebnegoKamienia, int iloscPotrzebnegoZelaza, int iloscPotrzebnegoObsydianu, string kod1, string kod2, string kod3, Bitmap obrazek, int ilosc = 0)
         {
             this.nazwa = nazwa;
-            ilosc = 0;
+            this.ilosc = ilosc;
             this.iloscPotrzebnegoKamienia = iloscPotrzebnegoKamienia;
             this.iloscPotrzebnychKawalkowDrewna = iloscPotrzebnychKawalkowDrewna;
             this.iloscPotrzebnegoZelaza = iloscPotrzebnegoZelaza;
@@ -31,10 +31,10 @@ namespace Anteriora
         /// <param name="iloscPotrzebnychSkorzanychPaskow"></param>
         /// <param name="kod"></param>
         /// <param name="obrazek"></param>
-        public Bronie(string nazwa, int iloscPotrzebnychKawalkowDrewna, int iloscPotrzebnychSkorzanychPaskow, string kod1, string kod2, Bitmap obrazek)
+        public Bronie(string nazwa, int iloscPotrzebnychKawalkowDrewna, int iloscPotrzebnychSkorzanychPaskow, string kod1, string kod2, Bitmap obrazek, int ilosc = 0)
         {
             this.nazwa = nazwa;
-            ilosc = 0;
+            this.ilosc = ilosc;
             this.iloscPotrzebnychKawalkowDrewna = iloscPotrzebnychKawalkowDrewna;
             this.iloscPotrzebnychSkorzanychPaskow = iloscPotrzebnychSkorzanychPaskow;
             this.kod1 = kod1;

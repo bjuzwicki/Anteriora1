@@ -12,16 +12,13 @@ namespace Anteriora
 {
     public partial class JaskiniaWezy : Form
     {
-
         Osada o1;
-        Poczatek o2;
-        Mapa o3;
+        Mapa o2;
 
-        public JaskiniaWezy(Osada c1, Poczatek c2, Mapa c3)
+        public JaskiniaWezy(Osada c1, Mapa c2)
         {
             o1 = c1;
             o2 = c2;
-            o3 = c3;
             InitializeComponent();
             TworzWidok();
         }
@@ -57,6 +54,7 @@ namespace Anteriora
 
         private void button1_Click(object sender, EventArgs e)
         {
+            o2.Visible = true;
             this.Close();
         }
 

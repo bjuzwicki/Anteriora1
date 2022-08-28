@@ -64,6 +64,7 @@
             this.buttonZapiszStanGryNamiot.TabIndex = 1;
             this.buttonZapiszStanGryNamiot.Text = "Zapis stanu gry";
             this.buttonZapiszStanGryNamiot.UseVisualStyleBackColor = true;
+            this.buttonZapiszStanGryNamiot.Click += new System.EventHandler(this.buttonZapiszStanGryNamiot_Click);
             // 
             // buttonWyjscieNamiot
             // 

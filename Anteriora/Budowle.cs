@@ -18,6 +18,7 @@ namespace Anteriora
         public int wytrzymałosc { get; set; }
         public int czasBudowy { get; set; }
         public int pojemnosc { get; set; }
+        public int podstawowaLiczbaPracownikowPotrzebnychDoBudowy { get; set; }
         public int liczbaPracownikowPotrzebnychDoBudowy { get; set; }
         public int czasUlepszenia { get; set; }
         public bool czyBudowlaIstnieje { get; set; }
@@ -27,20 +28,19 @@ namespace Anteriora
         public ProgressBar progressBarUlepszanie { get; set; }
         public Point punkt { get; set; }
 
-        public Budowle()
-        {
-
-        }
-
-        public Budowle(string nazwa, int liczbaPracownikowPotrzebnychDoBudowy)
+        public Budowle(string nazwa, int podstawowaLiczbaPracownikowPotrzebnychDoBudowy, int poziomUlepszenia = 0, bool czyBudowlaIstnieje = false)
         {
             this.nazwa = nazwa;
-            this.liczbaPracownikowPotrzebnychDoBudowy = liczbaPracownikowPotrzebnychDoBudowy;
+            this.podstawowaLiczbaPracownikowPotrzebnychDoBudowy = podstawowaLiczbaPracownikowPotrzebnychDoBudowy;
+            this.poziomUlepszenia = poziomUlepszenia;
+            this.czyBudowlaIstnieje = czyBudowlaIstnieje;
+            ObliczLiczbePracownikowPotrzebnychDoBudowy();
+            ObliczWytrzymaloscBudowli();
         }
         // czas budowy
         public int ZwrocCzasTrwaniaBudowy()
         {
-            return czasBudowy = (poziomUlepszenia+1)*10;
+            return czasBudowy = (poziomUlepszenia+1)*10; // do zmiany, wydluzyc czas budowy
         }
 
         public int ZwrocCzasTrwaniaUlepszania()
@@ -60,7 +60,12 @@ namespace Anteriora
 
         public int ObliczLiczbePracownikowPotrzebnychDoBudowy()
         {
-            return liczbaPracownikowPotrzebnychDoBudowy = liczbaPracownikowPotrzebnychDoBudowy * (2 + poziomUlepszenia);
+            if(poziomUlepszenia == 0)
+            {
+                return liczbaPracownikowPotrzebnychDoBudowy = podstawowaLiczbaPracownikowPotrzebnychDoBudowy;
+            }
+            return liczbaPracownikowPotrzebnychDoBudowy = podstawowaLiczbaPracownikowPotrzebnychDoBudowy * (2 + poziomUlepszenia);
+
         }
 
         public void ObliczWytrzymaloscBudowli()
